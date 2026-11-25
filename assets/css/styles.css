@@ -506,6 +506,10 @@ main {
   max-width: 620px;
 }
 
+.page-subtitle + .page-subtitle {
+  margin-top: 10px;
+}
+
 .media-list {
   list-style: none;
   padding: 0;
