@@ -375,21 +375,22 @@ main {
   text-wrap: balance;
 }
 
-.hero-lead {
-  font-size: clamp(1.14rem, 1.85vw, 1.28rem);
-  line-height: 1.62;
+.hero-lead,
+.hero-sub {
+  font-family: var(--font-sans);
+  font-size: 1.12rem;
+  line-height: 1.7;
   color: var(--ink);
-  margin: 0 0 16px;
   font-weight: 430;
   max-width: 54ch;
 }
 
+.hero-lead {
+  margin: 0 0 16px;
+}
+
 .hero-sub {
-  font-size: 1.04rem;
-  line-height: 1.68;
-  color: var(--ink-secondary);
   margin: 0 0 24px;
-  max-width: 54ch;
 }
 
 .focus-strip {
