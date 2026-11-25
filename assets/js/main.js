@@ -1,11 +1,11 @@
 /* ==========================================================================
-   Wei Xia — Static Website Interactions (Zero unsafe DOM sinks)
+   Wei Xia — Static Website Interactions v2 (Zero unsafe DOM sinks, CSP clean)
    ========================================================================== */
 
 (function () {
   'use strict';
 
-  // 1. Theme toggle (uses root data-theme attribute; no sensitive storage)
+  // 1. Theme toggle
   var root = document.documentElement;
   var themeBtn = document.getElementById('theme-toggle');
 
@@ -23,9 +23,7 @@
     } else if (getPreferredTheme() === 'dark') {
       root.setAttribute('data-theme', 'dark');
     }
-  } catch (_) {
-    // Ignore storage access restrictions in strict privacy modes
-  }
+  } catch (_) {}
 
   if (themeBtn) {
     themeBtn.addEventListener('click', function () {
@@ -48,7 +46,58 @@
     });
   }
 
-  // 3. Copy obfuscated contact handle
+  // 3. Reading progress bar & Sticky TOC active section observer
+  var progressEl = document.getElementById('reading-progress');
+  if (progressEl) {
+    var ticking = false;
+    var updateProgress = function () {
+      var scrollTop = window.scrollY || document.documentElement.scrollTop || 0;
+      var docHeight = document.documentElement.scrollHeight - window.innerHeight;
+      var pct = docHeight > 0 ? Math.min(100, Math.max(0, (scrollTop / docHeight) * 100)) : 0;
+      progressEl.value = pct;
+      ticking = false;
+    };
+    window.addEventListener('scroll', function () {
+      if (!ticking) {
+        window.requestAnimationFrame(updateProgress);
+        ticking = true;
+      }
+    }, { passive: true });
+    updateProgress();
+  }
+
+  var tocLinks = Array.prototype.slice.call(document.querySelectorAll('[data-toc-link]'));
+  if (tocLinks.length && 'IntersectionObserver' in window) {
+    var headingMap = {};
+    var headings = [];
+    tocLinks.forEach(function (link) {
+      var id = (link.getAttribute('href') || '').replace('#', '');
+      var target = id ? document.getElementById(id) : null;
+      if (target) {
+        headingMap[id] = link;
+        headings.push(target);
+      }
+    });
+
+    var setActiveToc = function (activeId) {
+      tocLinks.forEach(function (link) {
+        var isMatch = link.getAttribute('href') === '#' + activeId;
+        link.classList.toggle('is-active', isMatch);
+      });
+    };
+
+    var observer = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          setActiveToc(entry.target.id);
+        }
+      });
+    }, { rootMargin: '-15% 0px -72% 0px', threshold: 0 });
+
+    headings.forEach(function (h) { observer.observe(h); });
+  }
+
+  // 4. Copy obfuscated contact handle
   var copyBtn = document.getElementById('copy-contact-btn');
   var copyLabel = document.getElementById('copy-contact-label');
   if (copyBtn && copyLabel) {
@@ -70,12 +119,12 @@
     });
   }
 
-  // 4. Blog category & search filter
+  // 5. Blog category & search filter
   var filterPills = document.querySelectorAll('[data-filter-category]');
   var searchInput = document.getElementById('blog-search-input');
   var postCards = document.querySelectorAll('[data-post-card]');
   var emptyState = document.getElementById('blog-empty-state');
-  var activeCategory = 'all';
+  var activeCategory = document.body.getAttribute('data-initial-category') || 'all';
 
   function applyBlogFilter() {
     if (!postCards.length) {
@@ -103,8 +152,13 @@
 
   if (filterPills.length) {
     filterPills.forEach(function (pill) {
+      var cat = pill.getAttribute('data-filter-category') || 'all';
+      var isInitial = cat === activeCategory;
+      pill.classList.toggle('is-active', isInitial);
+      pill.setAttribute('aria-pressed', isInitial ? 'true' : 'false');
+
       pill.addEventListener('click', function () {
-        activeCategory = pill.getAttribute('data-filter-category') || 'all';
+        activeCategory = cat;
         filterPills.forEach(function (p) {
           p.classList.toggle('is-active', p === pill);
           p.setAttribute('aria-pressed', p === pill ? 'true' : 'false');
@@ -112,18 +166,20 @@
         applyBlogFilter();
       });
     });
+    applyBlogFilter();
   }
 
   if (searchInput) {
     searchInput.addEventListener('input', applyBlogFilter);
   }
 
-  // 5. Custom HTML5 Audio Player (Caffeine Mode)
+  // 6. Custom HTML5 Audio Player with <progress> scrubber (Caffeine Mode)
   var audioEl = document.getElementById('post-audio');
   var playBtn = document.getElementById('audio-play-btn');
   var playIcon = document.getElementById('audio-icon-play');
   var pauseIcon = document.getElementById('audio-icon-pause');
-  var rangeEl = document.getElementById('audio-range');
+  var scrubWrap = document.getElementById('audio-scrub');
+  var audioProgress = document.getElementById('audio-progress');
   var timeEl = document.getElementById('audio-time');
 
   function formatTime(sec) {
@@ -145,7 +201,7 @@
     }
   }
 
-  if (audioEl && playBtn && rangeEl && timeEl) {
+  if (audioEl && playBtn && scrubWrap && audioProgress && timeEl) {
     playBtn.addEventListener('click', function () {
       if (audioEl.paused) {
         audioEl.play().catch(function () {});
@@ -164,18 +220,36 @@
 
     audioEl.addEventListener('timeupdate', function () {
       var dur = audioEl.duration || 98;
-      var pct = (audioEl.currentTime / dur) * 100;
-      rangeEl.value = String(pct);
+      var pct = Math.min(100, Math.max(0, (audioEl.currentTime / dur) * 100));
+      audioProgress.value = pct;
+      scrubWrap.setAttribute('aria-valuenow', String(Math.round(pct)));
       timeEl.textContent = formatTime(audioEl.currentTime) + ' / ' + formatTime(dur);
     });
 
-    rangeEl.addEventListener('input', function () {
+    scrubWrap.addEventListener('click', function (e) {
+      var rect = scrubWrap.getBoundingClientRect();
+      if (rect.width <= 0) {
+        return;
+      }
+      var ratio = Math.min(1, Math.max(0, (e.clientX - rect.left) / rect.width));
       var dur = audioEl.duration || 98;
-      audioEl.currentTime = ( parseFloat(rangeEl.value) / 100 ) * dur;
+      audioEl.currentTime = ratio * dur;
+      audioProgress.value = ratio * 100;
+    });
+
+    scrubWrap.addEventListener('keydown', function (e) {
+      var dur = audioEl.duration || 98;
+      if (e.key === 'ArrowRight') {
+        e.preventDefault();
+        audioEl.currentTime = Math.min(dur, audioEl.currentTime + 5);
+      } else if (e.key === 'ArrowLeft') {
+        e.preventDefault();
+        audioEl.currentTime = Math.max(0, audioEl.currentTime - 5);
+      }
     });
   }
 
-  // 6. Accessible Image Lightbox (for figures and NYC bakery/cafe galleries)
+  // 7. Accessible Image Lightbox with Counter
   var lightbox = document.getElementById('lightbox');
   var lightboxImg = document.getElementById('lightbox-img');
   var lightboxCaption = document.getElementById('lightbox-caption');
@@ -196,7 +270,8 @@
     lightboxImg.setAttribute('src', src);
     lightboxImg.setAttribute('alt', alt);
     if (lightboxCaption) {
-      lightboxCaption.textContent = alt;
+      var prefix = zoomables.length > 1 ? '(' + (index + 1) + ' / ' + zoomables.length + ')  ' : '';
+      lightboxCaption.textContent = prefix + alt;
     }
     if (lightboxPrev && lightboxNext) {
       var multi = zoomables.length > 1;

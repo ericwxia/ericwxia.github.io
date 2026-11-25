@@ -25,15 +25,15 @@
   <header class="site-header">
     <div class="header-inner">
       <a class="brand" href="/" id="nav-brand">
-        <span class="brand-swatch" aria-hidden="true"></span>
+        <span class="brand-monogram" aria-hidden="true">WX</span>
         <span>Wei Xia</span>
       </a>
       <div class="nav-wrap">
         <nav id="site-nav" class="site-nav" aria-label="Primary">
           <a class="nav-link" href="/">Home</a>
-        <a class="nav-link" href="/media/">Media</a>
-        <a class="nav-link" href="/blog/" aria-current="page">Blog</a>
-        <a class="nav-link" href="/personal/">Personal</a>
+          <a class="nav-link" href="/media/">Media</a>
+          <a class="nav-link" href="/blog/" aria-current="page">Blog</a>
+          <a class="nav-link" href="/personal/">Personal</a>
         </nav>
         <button id="theme-toggle" class="icon-btn" type="button" aria-label="Toggle color theme" title="Toggle light or dark theme">
           <svg class="icon theme-icon-dark" viewBox="0 0 24 24" aria-hidden="true"><path d="M12,21q-3.75,0-6.38-2.63T3,12T5.63,5.63T12,3q0.35,0 0.69,0.02q0.34,0.02 0.66,0.07q-1.03,0.73-1.64,1.89T11.1,7.5q0,2.25 1.57,3.82T16.5,12.9q1.38,0 2.53-0.61t1.88-1.64q0.05,0.33 0.07,0.66T21,12q0,3.75-2.63,6.38T12,21Zm0-2q2.2,0 3.95-1.21t2.55-3.16q-0.5,0.13-1,0.2t-1,0.08q-3.07,0-5.24-2.16Q9.1,10.58 9.1,7.5q0-0.5 0.08-1t0.2-1Q7.43,6.3 6.21,8.05T5,12q0,2.9 2.05,4.95T12,19Zm-0.25-6.75Z"/></svg>
@@ -44,6 +44,7 @@
         </button>
       </div>
     </div>
+    <progress id="reading-progress" class="reading-progress" value="0" max="100" aria-hidden="true"></progress>
   </header>
 
   <main id="main-content">
@@ -82,9 +83,14 @@
                 <span class="audio-title">Caffeine Mode</span>
                 <span class="audio-artist">AI song by Wei Xia</span>
               </div>
-              <span id="audio-time" class="audio-time">0:00 / 1:38</span>
+              <div class="audio-meta-right">
+                <a class="lyrics-jump" href="#caffeine-mode-lyrics">Lyrics &darr;</a>
+                <span id="audio-time" class="audio-time">0:00 / 1:38</span>
+              </div>
             </div>
-            <input id="audio-range" class="audio-range" type="range" min="0" max="100" step="0.1" value="0" aria-label="Seek Caffeine Mode playback" />
+            <div id="audio-scrub" class="audio-scrub" role="slider" tabindex="0" aria-label="Seek Caffeine Mode playback" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+              <progress id="audio-progress" class="audio-progress" value="0" max="100"></progress>
+            </div>
           </div>
           <audio id="post-audio" preload="metadata" src="/assets/media/caffeine-mode.mp3"></audio>
         </div>
@@ -98,69 +104,69 @@
           <p>他心想，我懂了，我不光是喂食工，还是个兼职的酵母心理咨询师。</p>
           <p>他的技术其实很不错。但在杜布瓦的店里，技术是最不值钱的东西。休息日，阿莱决定上街进行一次市场调研，美其名曰寻找灵感，其实就是嘴馋了。</p>
           <p>他先去了 Bread Story，点了一份法式蛋奶挞。东西端上来，他愣了一下。这甜点朴实得有点过分，浑身上下都写着“我很好吃，但我懒得打扮”。一口下去，蛋奶香气直冲天灵盖。阿莱的职业病犯了：这个配方，简单到堪称偷懒，但幸福感却高得离谱。这让他有点困惑。</p>
-          <p>后来，他又坐地铁晃到了唐人街。在 大荣华饼家的窗口，他花一美金买了个纸包蛋糕。这玩意儿更绝，软得像个没骨头的抱枕。阿莱站在街角，一边躲着鸽子，一边试图用他学过的所有烘焙力学知识来分析这个蛋糕的支撑结构。最后他放弃了。</p>
-          <p>结论是：有些快乐，就是这么不讲道理。希望以后不会被AI知道了酵母老佛爷的秘密。</p>
+          <p>后来，他又坐地铁晃到了唐人街。在大荣华饼家的窗口，他花一美金买了个纸包蛋糕。这玩意儿更绝，软得像个没骨头的抱枕。阿莱站在街角，一边躲着鸽子，一边试图用他学过的所有烘焙力学知识来分析这个蛋糕的支撑结构。最后他放弃了。</p>
+          <p>结论是：有些快乐，就是这么不讲道理。希望以后不会被 AI 知道了酵母老佛爷的秘密。</p>
           <p>那天晚上，纽约妖风四起，烘焙坊的暖气毫无征兆地罢工了。杜布瓦先生穿着他那身笔挺的厨师服，在厨房里团团转，嘴里用法语和英语交替着对夏娃嘘寒问暖，那架势像极了产房外焦急等待的父亲。</p>
           <p>阿莱看着这位传说中的暴君，第一次发现他竟有点可爱。</p>
           <p>在一片小小的混乱中，阿莱默默地脱下自己的外套，和几条干毛巾一起，将夏娃的瓦罐包了个严严实实，像给它盖上了一床小被子。</p>
           <p>杜布瓦先生停下脚步，用一种“你小子还挺机灵”的眼神瞥了他一眼。</p>
           <p>第二天清晨，夏娃安然无恙，甚至比平时更有活力。杜布瓦先生背着手，围着它转了两圈，然后指了指旁边的一袋面粉。</p>
           <p>“揉。”他说。</p>
-          <p>阿莱却没有立刻动手。他狡黠地一笑，从自己的储物柜里，取出了他那罐被冷落已久的私人酵母—“伙伴君”。他当着杜布瓦的面，舀了一勺活泼的伙伴君，大大方方地喂给了高贵的夏娃。</p>
+          <p>阿莱却没有立刻动手。他狡黠地一笑，从自己的储物柜里，取出了他那罐被冷落已久的私人酵母——“伙伴君”。他当着杜布瓦的面，舀了一勺活泼的伙伴君，大大方方地喂给了高贵的夏娃。</p>
           <p>杜布瓦先生的眉毛挑得像要飞起来，但罕见地，他什么也没说。</p>
           <p>阿莱知道，规矩森严的纽约厨房里，一场有趣的风暴，就要从这两罐酵母的非法会晤开始了。</p>
 
           <p class="prose-divider">完</p>
         </div>
 
-        <div class="gallery-grid" aria-label="纽约烘焙甜点图集">
-          <button class="gallery-thumb" type="button" data-lightbox-src="/assets/images/bakery-01.jpg" data-lightbox-caption="纽约烘焙风味记录 (1/8)" aria-label="放大查看烘焙照片 1"><img src="/assets/images/bakery-01.jpg" alt="纽约烘焙甜点照片 1" loading="lazy" /></button>
-          <button class="gallery-thumb" type="button" data-lightbox-src="/assets/images/bakery-02.jpg" data-lightbox-caption="纽约烘焙风味记录 (2/8)" aria-label="放大查看烘焙照片 2"><img src="/assets/images/bakery-02.jpg" alt="纽约烘焙甜点照片 2" loading="lazy" /></button>
-          <button class="gallery-thumb" type="button" data-lightbox-src="/assets/images/bakery-03.jpg" data-lightbox-caption="纽约烘焙风味记录 (3/8)" aria-label="放大查看烘焙照片 3"><img src="/assets/images/bakery-03.jpg" alt="纽约烘焙甜点照片 3" loading="lazy" /></button>
-          <button class="gallery-thumb" type="button" data-lightbox-src="/assets/images/bakery-04.jpg" data-lightbox-caption="纽约烘焙风味记录 (4/8)" aria-label="放大查看烘焙照片 4"><img src="/assets/images/bakery-04.jpg" alt="纽约烘焙甜点照片 4" loading="lazy" /></button>
-          <button class="gallery-thumb" type="button" data-lightbox-src="/assets/images/bakery-05.jpg" data-lightbox-caption="纽约烘焙风味记录 (5/8)" aria-label="放大查看烘焙照片 5"><img src="/assets/images/bakery-05.jpg" alt="纽约烘焙甜点照片 5" loading="lazy" /></button>
-          <button class="gallery-thumb" type="button" data-lightbox-src="/assets/images/bakery-06.jpg" data-lightbox-caption="纽约烘焙风味记录 (6/8)" aria-label="放大查看烘焙照片 6"><img src="/assets/images/bakery-06.jpg" alt="纽约烘焙甜点照片 6" loading="lazy" /></button>
-          <button class="gallery-thumb" type="button" data-lightbox-src="/assets/images/bakery-07.jpg" data-lightbox-caption="纽约烘焙风味记录 (7/8)" aria-label="放大查看烘焙照片 7"><img src="/assets/images/bakery-07.jpg" alt="纽约烘焙甜点照片 7" loading="lazy" /></button>
-          <button class="gallery-thumb" type="button" data-lightbox-src="/assets/images/bakery-08.jpg" data-lightbox-caption="纽约烘焙风味记录 (8/8)" aria-label="放大查看烘焙照片 8"><img src="/assets/images/bakery-08.jpg" alt="纽约烘焙甜点照片 8" loading="lazy" /></button>
+        <div id="bakery-gallery" class="gallery-editorial" aria-label="纽约烘焙甜点图集">
+          <button class="gallery-thumb is-featured" type="button" data-lightbox-src="/assets/images/bakery-01.jpg" data-lightbox-caption="纽约烘焙风味记录 (1/8)" aria-label="放大查看烘焙照片 1"><img src="/assets/images/bakery-01.jpg" alt="纽约烘焙甜点照片 1" loading="lazy" /><span class="gallery-badge">1 / 8</span></button>
+          <button class="gallery-thumb" type="button" data-lightbox-src="/assets/images/bakery-02.jpg" data-lightbox-caption="纽约烘焙风味记录 (2/8)" aria-label="放大查看烘焙照片 2"><img src="/assets/images/bakery-02.jpg" alt="纽约烘焙甜点照片 2" loading="lazy" /><span class="gallery-badge">2 / 8</span></button>
+          <button class="gallery-thumb" type="button" data-lightbox-src="/assets/images/bakery-03.jpg" data-lightbox-caption="纽约烘焙风味记录 (3/8)" aria-label="放大查看烘焙照片 3"><img src="/assets/images/bakery-03.jpg" alt="纽约烘焙甜点照片 3" loading="lazy" /><span class="gallery-badge">3 / 8</span></button>
+          <button class="gallery-thumb" type="button" data-lightbox-src="/assets/images/bakery-04.jpg" data-lightbox-caption="纽约烘焙风味记录 (4/8)" aria-label="放大查看烘焙照片 4"><img src="/assets/images/bakery-04.jpg" alt="纽约烘焙甜点照片 4" loading="lazy" /><span class="gallery-badge">4 / 8</span></button>
+          <button class="gallery-thumb" type="button" data-lightbox-src="/assets/images/bakery-05.jpg" data-lightbox-caption="纽约烘焙风味记录 (5/8)" aria-label="放大查看烘焙照片 5"><img src="/assets/images/bakery-05.jpg" alt="纽约烘焙甜点照片 5" loading="lazy" /><span class="gallery-badge">5 / 8</span></button>
+          <button class="gallery-thumb" type="button" data-lightbox-src="/assets/images/bakery-06.jpg" data-lightbox-caption="纽约烘焙风味记录 (6/8)" aria-label="放大查看烘焙照片 6"><img src="/assets/images/bakery-06.jpg" alt="纽约烘焙甜点照片 6" loading="lazy" /><span class="gallery-badge">6 / 8</span></button>
+          <button class="gallery-thumb" type="button" data-lightbox-src="/assets/images/bakery-07.jpg" data-lightbox-caption="纽约烘焙风味记录 (7/8)" aria-label="放大查看烘焙照片 7"><img src="/assets/images/bakery-07.jpg" alt="纽约烘焙甜点照片 7" loading="lazy" /><span class="gallery-badge">7 / 8</span></button>
+          <button class="gallery-thumb is-wide" type="button" data-lightbox-src="/assets/images/bakery-08.jpg" data-lightbox-caption="纽约烘焙风味记录 (8/8)" aria-label="放大查看烘焙照片 8"><img src="/assets/images/bakery-08.jpg" alt="纽约烘焙甜点照片 8" loading="lazy" /><span class="gallery-badge">8 / 8</span></button>
         </div>
 
         <section class="spot-guide" aria-label="烘焙店笔记">
           <h2 class="spot-guide-title">🌰 纽约烘焙笔记</h2>
           <ul class="spot-list">
-            <li><strong>Bread Story:</strong> 曼岛很喜欢的社区店，喜欢那的法式蛋奶挞</li>
-            <li><strong>Radio Bakery:</strong> 布鲁克林热门的烘焙店，以高品质的酥皮闻名</li>
-            <li><strong>Burrow:</strong> 藏在 Dumbo 办公楼大厅里的日式蛋糕店</li>
-            <li><strong>大荣华饼家 (Kam Hing):</strong> 唐人街老店，喜欢它的纸包蛋糕和蛋白蛋糕</li>
-            <li><strong>Petit Chou:</strong> 一家小巧的法式烘焙店，专注于闪电泡芙</li>
-            <li><strong>Magnolia Bakery:</strong> 因欲望都市而出名的美式烘焙店，喜欢这里的红丝绒芝士蛋糕</li>
-            <li><strong>Lysée:</strong> 一家似乎想要将甜点做精美的法甜店，融合了韩式元素</li>
-            <li><strong>Aux Merveilleux de Fred:</strong> 这家店专做法式蛋白糖霜蛋糕，喜欢它的华夫饼</li>
+            <li><strong>Bread Story</strong>曼岛很喜欢的社区店，喜欢那的法式蛋奶挞</li>
+            <li><strong>Radio Bakery</strong>布鲁克林热门的烘焙店，以高品质的酥皮闻名</li>
+            <li><strong>Burrow</strong>藏在 Dumbo 办公楼大厅里的日式蛋糕店</li>
+            <li><strong>大荣华饼家 (Kam Hing)</strong>唐人街老店，喜欢它的纸包蛋糕和蛋白蛋糕</li>
+            <li><strong>Petit Chou</strong>一家小巧的法式烘焙店，专注于闪电泡芙</li>
+            <li><strong>Magnolia Bakery</strong>因欲望都市而出名的美式烘焙店，喜欢这里的红丝绒芝士蛋糕</li>
+            <li><strong>Lysée</strong>一家似乎想要将甜点做精美的法甜店，融合了韩式元素</li>
+            <li><strong>Aux Merveilleux de Fred</strong>这家店专做法式蛋白糖霜蛋糕，喜欢它的华夫饼</li>
           </ul>
         </section>
 
-        <div class="gallery-grid" aria-label="纽约咖啡与抹茶图集">
-          <button class="gallery-thumb" type="button" data-lightbox-src="/assets/images/cafe-01.jpg" data-lightbox-caption="纽约咖啡与抹茶记录 (1/7)" aria-label="放大查看咖啡与抹茶照片 1"><img src="/assets/images/cafe-01.jpg" alt="纽约咖啡与抹茶照片 1" loading="lazy" /></button>
-          <button class="gallery-thumb" type="button" data-lightbox-src="/assets/images/cafe-02.jpg" data-lightbox-caption="纽约咖啡与抹茶记录 (2/7)" aria-label="放大查看咖啡与抹茶照片 2"><img src="/assets/images/cafe-02.jpg" alt="纽约咖啡与抹茶照片 2" loading="lazy" /></button>
-          <button class="gallery-thumb" type="button" data-lightbox-src="/assets/images/cafe-03.jpg" data-lightbox-caption="纽约咖啡与抹茶记录 (3/7)" aria-label="放大查看咖啡与抹茶照片 3"><img src="/assets/images/cafe-03.jpg" alt="纽约咖啡与抹茶照片 3" loading="lazy" /></button>
-          <button class="gallery-thumb" type="button" data-lightbox-src="/assets/images/cafe-04.jpg" data-lightbox-caption="纽约咖啡与抹茶记录 (4/7)" aria-label="放大查看咖啡与抹茶照片 4"><img src="/assets/images/cafe-04.jpg" alt="纽约咖啡与抹茶照片 4" loading="lazy" /></button>
-          <button class="gallery-thumb" type="button" data-lightbox-src="/assets/images/cafe-05.jpg" data-lightbox-caption="纽约咖啡与抹茶记录 (5/7)" aria-label="放大查看咖啡与抹茶照片 5"><img src="/assets/images/cafe-05.jpg" alt="纽约咖啡与抹茶照片 5" loading="lazy" /></button>
-          <button class="gallery-thumb" type="button" data-lightbox-src="/assets/images/cafe-06.jpg" data-lightbox-caption="纽约咖啡与抹茶记录 (6/7)" aria-label="放大查看咖啡与抹茶照片 6"><img src="/assets/images/cafe-06.jpg" alt="纽约咖啡与抹茶照片 6" loading="lazy" /></button>
-          <button class="gallery-thumb" type="button" data-lightbox-src="/assets/images/cafe-07.jpg" data-lightbox-caption="纽约咖啡与抹茶记录 (7/7)" aria-label="放大查看咖啡与抹茶照片 7"><img src="/assets/images/cafe-07.jpg" alt="纽约咖啡与抹茶照片 7" loading="lazy" /></button>
+        <div class="gallery-editorial" aria-label="纽约咖啡与抹茶图集">
+          <button class="gallery-thumb is-featured" type="button" data-lightbox-src="/assets/images/cafe-01.jpg" data-lightbox-caption="纽约咖啡与抹茶记录 (1/7)" aria-label="放大查看咖啡与抹茶照片 1"><img src="/assets/images/cafe-01.jpg" alt="纽约咖啡与抹茶照片 1" loading="lazy" /><span class="gallery-badge">1 / 7</span></button>
+          <button class="gallery-thumb" type="button" data-lightbox-src="/assets/images/cafe-02.jpg" data-lightbox-caption="纽约咖啡与抹茶记录 (2/7)" aria-label="放大查看咖啡与抹茶照片 2"><img src="/assets/images/cafe-02.jpg" alt="纽约咖啡与抹茶照片 2" loading="lazy" /><span class="gallery-badge">2 / 7</span></button>
+          <button class="gallery-thumb" type="button" data-lightbox-src="/assets/images/cafe-03.jpg" data-lightbox-caption="纽约咖啡与抹茶记录 (3/7)" aria-label="放大查看咖啡与抹茶照片 3"><img src="/assets/images/cafe-03.jpg" alt="纽约咖啡与抹茶照片 3" loading="lazy" /><span class="gallery-badge">3 / 7</span></button>
+          <button class="gallery-thumb" type="button" data-lightbox-src="/assets/images/cafe-04.jpg" data-lightbox-caption="纽约咖啡与抹茶记录 (4/7)" aria-label="放大查看咖啡与抹茶照片 4"><img src="/assets/images/cafe-04.jpg" alt="纽约咖啡与抹茶照片 4" loading="lazy" /><span class="gallery-badge">4 / 7</span></button>
+          <button class="gallery-thumb" type="button" data-lightbox-src="/assets/images/cafe-05.jpg" data-lightbox-caption="纽约咖啡与抹茶记录 (5/7)" aria-label="放大查看咖啡与抹茶照片 5"><img src="/assets/images/cafe-05.jpg" alt="纽约咖啡与抹茶照片 5" loading="lazy" /><span class="gallery-badge">5 / 7</span></button>
+          <button class="gallery-thumb is-wide" type="button" data-lightbox-src="/assets/images/cafe-06.jpg" data-lightbox-caption="纽约咖啡与抹茶记录 (6/7)" aria-label="放大查看咖啡与抹茶照片 6"><img src="/assets/images/cafe-06.jpg" alt="纽约咖啡与抹茶照片 6" loading="lazy" /><span class="gallery-badge">6 / 7</span></button>
+          <button class="gallery-thumb is-wide" type="button" data-lightbox-src="/assets/images/cafe-07.jpg" data-lightbox-caption="纽约咖啡与抹茶记录 (7/7)" aria-label="放大查看咖啡与抹茶照片 7"><img src="/assets/images/cafe-07.jpg" alt="纽约咖啡与抹茶照片 7" loading="lazy" /><span class="gallery-badge">7 / 7</span></button>
         </div>
 
         <section class="spot-guide" aria-label="咖啡与抹茶笔记">
           <h2 class="spot-guide-title">☕ 咖啡与抹茶角落</h2>
           <ul class="spot-list">
-            <li><strong>Maru Coffee:</strong> Maru 开到纽约了，制作精良，蛮喜欢这里很多都非常不错</li>
-            <li><strong>Google Office Coffee:</strong> 有咖啡师和辣妈咖啡机。免费且品质稳定，现在已经挺少在外面买咖啡了 :)</li>
-            <li><strong>Sorate:</strong> 可以试试那里的优质版抹茶</li>
-            <li><strong>Aoko Matcha:</strong> 不同浓度抹茶冰淇淋</li>
-            <li><strong>Nana&lsquo;s Green Tea:</strong> 它的抹茶巴斯克蛋糕好吃</li>
-            <li><strong>12 Matcha:</strong> 这里有氛围和设计感，有特色的抹茶店</li>
+            <li><strong>Maru Coffee</strong>Maru 开到纽约了，制作精良，蛮喜欢这里很多都非常不错</li>
+            <li><strong>Google Office Coffee</strong>有咖啡师和辣妈咖啡机。免费且品质稳定，现在已经挺少在外面买咖啡了 :)</li>
+            <li><strong>Sorate</strong>可以试试那里的优质版抹茶</li>
+            <li><strong>Aoko Matcha</strong>不同浓度抹茶冰淇淋</li>
+            <li><strong>Nana&lsquo;s Green Tea</strong>它的抹茶巴斯克蛋糕好吃</li>
+            <li><strong>12 Matcha</strong>这里有氛围和设计感，有特色的抹茶店</li>
           </ul>
         </section>
 
-        <section class="lyrics-card" lang="en">
+        <section id="caffeine-mode-lyrics" class="lyrics-card" lang="en">
           <div class="lyrics-header">Caffeine Mode &nbsp;|&nbsp; AI song by Wei Xia &nbsp;|&nbsp; March 2024</div>
           <p class="lyrics-stanza">
             Saturday afternoon, feeling so free<br />
@@ -189,20 +195,21 @@
 
         <div class="related-section" lang="en">
           <div class="section-header">
-            <h2 class="section-title">Recent Posts</h2>
+            <h2 class="section-title">Continue Reading</h2>
             <a class="section-more" href="/blog/">See All <svg class="icon icon-sm" viewBox="0 0 24 24" aria-hidden="true"><path d="M6.4,18L5,16.6L14.6,7H6V5H18V17H16V8.4L6.4,18Z"/></svg></a>
           </div>
-          <article class="post-card">
-            <a href="/post/romantic-earth-v-0-1/">
-              <div class="post-card-body">
-                <div class="post-card-meta">
-                  <span>Nov 16, 2025 &middot; 7 min read</span>
-                </div>
-                <h3 class="post-card-title">Romantic Earth: V-0.1</h3>
-                <span class="post-card-footer">Read essay <svg class="icon icon-sm" viewBox="0 0 24 24" aria-hidden="true"><path d="M6.4,18L5,16.6L14.6,7H6V5H18V17H16V8.4L6.4,18Z"/></svg></span>
+          <a class="next-post-card" href="/post/romantic-earth-v-0-1/">
+            <div class="next-post-thumb">
+              <img src="/assets/images/romantic-earth-cover.jpg" alt="Romantic Earth: V-0.1 cover artwork" loading="lazy" />
+            </div>
+            <div class="next-post-body">
+              <div class="post-card-meta">
+                <span>Nov 16, 2025 &middot; 7 min read</span>
               </div>
-            </a>
-          </article>
+              <h3 class="post-card-title">Romantic Earth: V-0.1</h3>
+              <span class="post-card-footer">Read essay <svg class="icon icon-sm" viewBox="0 0 24 24" aria-hidden="true"><path d="M6.4,18L5,16.6L14.6,7H6V5H18V17H16V8.4L6.4,18Z"/></svg></span>
+            </div>
+          </a>
         </div>
       </div>
     </article>
