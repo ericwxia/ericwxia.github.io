@@ -156,39 +156,8 @@ button {
   height: 66px;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-end;
   gap: 24px;
-}
-
-.brand {
-  display: inline-flex;
-  align-items: center;
-  gap: 11px;
-  font-weight: 620;
-  font-size: 1.03rem;
-  letter-spacing: -0.018em;
-  color: var(--ink);
-}
-
-.brand-monogram {
-  width: 28px;
-  height: 28px;
-  border-radius: 8px;
-  background: var(--ink);
-  color: var(--bg);
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  font-family: var(--font-sans);
-  font-size: 0.7rem;
-  font-weight: 700;
-  letter-spacing: 0.03em;
-  flex-shrink: 0;
-  transition: transform 0.18s ease;
-}
-
-.brand:hover .brand-monogram {
-  transform: scale(1.05);
 }
 
 .nav-wrap {
