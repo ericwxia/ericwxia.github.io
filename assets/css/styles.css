@@ -933,10 +933,14 @@ main {
 
 .personal-layout {
   display: grid;
-  grid-template-columns: 1.22fr 0.92fr;
-  gap: 52px;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 56px;
   align-items: start;
   padding: 28px 0 64px;
+}
+
+.personal-prose {
+  max-width: 60ch;
 }
 
 .personal-prose > p {
@@ -949,6 +953,9 @@ main {
 }
 
 .art-card {
+  width: 276px;
+  max-width: 276px;
+  margin-left: auto;
   border: 1px solid var(--border);
   border-radius: var(--radius-md);
   overflow: hidden;
@@ -1715,7 +1722,13 @@ main {
 
   .personal-layout {
     grid-template-columns: 1fr;
-    gap: 36px;
+    gap: 32px;
+  }
+
+  .art-card {
+    margin: 0;
+    width: 240px;
+    max-width: 240px;
   }
 
   .post-grid {
