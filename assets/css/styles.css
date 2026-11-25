@@ -352,18 +352,9 @@ main {
 
 .hero-grid {
   display: grid;
-  grid-template-columns: 1.38fr 0.82fr;
-  gap: 56px;
+  grid-template-columns: 1fr auto;
+  gap: 48px;
   align-items: center;
-}
-
-.hero-kicker {
-  font-family: var(--font-mono);
-  font-size: 0.76rem;
-  letter-spacing: 0.09em;
-  text-transform: uppercase;
-  color: var(--ink-muted);
-  margin: 0 0 14px;
 }
 
 .hero-title {
@@ -425,8 +416,8 @@ main {
   display: inline-flex;
   flex-wrap: wrap;
   align-items: center;
-  gap: 10px;
-  padding: 7px 9px 7px 16px;
+  gap: 8px;
+  padding: 8px 18px;
   background: var(--bg-elevated);
   border: 1px solid var(--border);
   border-radius: 999px;
@@ -446,48 +437,19 @@ main {
   letter-spacing: -0.01em;
 }
 
-.copy-btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 5px;
-  padding: 6px 12px;
-  border-radius: 999px;
-  border: 1px solid var(--border);
-  background: var(--bg-subtle);
-  color: var(--ink-secondary);
-  font-size: 0.8rem;
-  font-weight: 530;
-  cursor: pointer;
-  transition: background-color 0.16s ease, color 0.16s ease, border-color 0.16s ease;
-}
-
-.copy-btn:hover {
-  background: var(--ink);
-  color: var(--bg);
-  border-color: var(--ink);
-}
-
-.copy-btn.is-copied {
-  background: var(--accent);
-  color: #ffffff;
-  border-color: var(--accent);
-}
-
-/* Museum Mat Portrait Card */
+/* Compact Portrait Frame */
 .portrait-card {
-  max-width: 316px;
+  width: 196px;
+  max-width: 196px;
   margin-left: auto;
-  width: 100%;
-  background: var(--bg-elevated);
   border: 1px solid var(--border);
-  border-radius: var(--radius-lg);
-  padding: 10px;
+  border-radius: 16px;
+  overflow: hidden;
   box-shadow: var(--shadow-md);
+  background: var(--bg-obsidian);
 }
 
 .portrait-frame {
-  border-radius: 13px;
-  overflow: hidden;
   background: var(--bg-obsidian);
   aspect-ratio: 760 / 826;
 }
@@ -497,27 +459,6 @@ main {
   height: 100%;
   object-fit: cover;
   object-position: center center;
-}
-
-.portrait-caption {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 8px;
-  padding: 10px 6px 2px;
-  font-family: var(--font-mono);
-  font-size: 0.73rem;
-  color: var(--ink-muted);
-}
-
-.portrait-swatch {
-  width: 18px;
-  height: 10px;
-  border-radius: 3px;
-  background-image: url('/assets/images/painting-banner.jpg');
-  background-size: cover;
-  background-position: center;
-  display: inline-block;
 }
 
 /* ==========================================================================
@@ -1708,7 +1649,8 @@ main {
   .portrait-card {
     order: -1;
     margin: 0;
-    max-width: 230px;
+    width: 148px;
+    max-width: 148px;
   }
 
   .personal-layout {

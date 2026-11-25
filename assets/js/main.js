@@ -66,29 +66,7 @@
     headings.forEach(function (h) { observer.observe(h); });
   }
 
-  // 4. Copy obfuscated contact handle
-  var copyBtn = document.getElementById('copy-contact-btn');
-  var copyLabel = document.getElementById('copy-contact-label');
-  if (copyBtn && copyLabel) {
-    copyBtn.addEventListener('click', function () {
-      var user = copyBtn.getAttribute('data-u') || '';
-      var domain = copyBtn.getAttribute('data-d') || '';
-      if (!user || !domain || !navigator.clipboard) {
-        return;
-      }
-      var addr = user + '@' + domain;
-      navigator.clipboard.writeText(addr).then(function () {
-        copyBtn.classList.add('is-copied');
-        copyLabel.textContent = 'Copied';
-        window.setTimeout(function () {
-          copyBtn.classList.remove('is-copied');
-          copyLabel.textContent = 'Copy';
-        }, 2000);
-      }).catch(function () {});
-    });
-  }
-
-  // 5. Blog category & search filter
+  // 4. Blog category & search filter
   var filterPills = document.querySelectorAll('[data-filter-category]');
   var searchInput = document.getElementById('blog-search-input');
   var postCards = document.querySelectorAll('[data-post-card]');
