@@ -16,9 +16,10 @@
   --ink-muted: #8e8a80;
   --border: rgba(243, 240, 232, 0.10);
   --border-strong: rgba(243, 240, 232, 0.22);
-  --accent: #c4c0b6;
-  --accent-hover: #f3f0e8;
-  --accent-soft: rgba(243, 240, 232, 0.08);
+  --accent: #e2c692;
+  --accent-hover: #f2ddb3;
+  --accent-soft: rgba(226, 198, 146, 0.09);
+  --accent-border: rgba(226, 198, 146, 0.30);
   --header-bg: rgba(17, 17, 16, 0.88);
   --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.34);
   --shadow-md: 0 14px 36px -10px rgba(0, 0, 0, 0.54);
@@ -293,10 +294,11 @@ main {
 
 .section-header {
   display: flex;
-  align-items: flex-end;
+  align-items: center;
   justify-content: space-between;
-  gap: 16px;
-  margin-bottom: 28px;
+  flex-wrap: wrap;
+  gap: 12px 16px;
+  margin-bottom: 26px;
 }
 
 .section-kicker {
@@ -318,13 +320,41 @@ main {
 .section-links {
   display: inline-flex;
   align-items: center;
-  gap: 12px;
+  gap: 14px;
   flex-shrink: 0;
 }
 
-.section-sep {
-  color: var(--border-strong);
-  user-select: none;
+.scholar-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 5px 13px;
+  border-radius: 999px;
+  background: var(--accent-soft);
+  border: 1px solid var(--accent-border);
+  color: var(--accent);
+  font-size: 0.86rem;
+  font-weight: 540;
+  letter-spacing: -0.005em;
+  white-space: nowrap;
+  transition: background-color 0.16s ease, border-color 0.16s ease, color 0.16s ease, transform 0.16s ease;
+}
+
+.scholar-pill:hover {
+  color: var(--accent-hover);
+  background: rgba(226, 198, 146, 0.15);
+  border-color: rgba(226, 198, 146, 0.52);
+  transform: translateY(-1px);
+}
+
+.scholar-pill .scholar-arrow {
+  opacity: 0.85;
+  transition: transform 0.16s ease, opacity 0.16s ease;
+}
+
+.scholar-pill:hover .scholar-arrow {
+  opacity: 1;
+  transform: translate(2px, -2px);
 }
 
 .section-more {
@@ -332,15 +362,15 @@ main {
   align-items: center;
   gap: 4px;
   font-size: 0.88rem;
-  font-weight: 480;
-  color: var(--ink-muted);
+  font-weight: 500;
+  color: var(--ink-secondary);
   white-space: nowrap;
   flex-shrink: 0;
   transition: color 0.16s ease;
 }
 
 .section-more:hover {
-  color: var(--ink);
+  color: var(--accent-hover);
 }
 
 .section-more .icon {
@@ -447,16 +477,16 @@ main {
 }
 
 .inline-link {
-  color: inherit;
+  color: var(--accent);
   text-decoration: underline;
-  text-decoration-color: rgba(243, 240, 232, 0.28);
+  text-decoration-color: rgba(226, 198, 146, 0.38);
   text-underline-offset: 3px;
   transition: color 0.16s ease, text-decoration-color 0.16s ease;
 }
 
 .inline-link:hover {
-  color: var(--ink);
-  text-decoration-color: rgba(243, 240, 232, 0.8);
+  color: var(--accent-hover);
+  text-decoration-color: rgba(242, 221, 179, 0.85);
 }
 
 /* Compact Portrait Frame */
