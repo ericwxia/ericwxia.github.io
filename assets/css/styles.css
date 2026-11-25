@@ -930,28 +930,16 @@ main {
 }
 
 .art-card {
-  background: var(--bg-elevated);
   border: 1px solid var(--border);
-  border-radius: var(--radius-lg);
-  padding: 12px;
+  border-radius: var(--radius-md);
+  overflow: hidden;
   box-shadow: var(--shadow-md);
 }
 
 .art-card img {
-  border-radius: 10px;
   width: 100%;
   aspect-ratio: 16 / 11;
   object-fit: cover;
-}
-
-.art-caption {
-  padding: 12px 6px 4px;
-  font-family: var(--font-mono);
-  font-size: 0.76rem;
-  color: var(--ink-muted);
-  display: flex;
-  justify-content: space-between;
-  gap: 12px;
 }
 
 /* ==========================================================================
