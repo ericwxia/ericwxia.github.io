@@ -967,7 +967,7 @@ main {
   margin: 0 auto;
   padding: 0 24px;
   display: grid;
-  grid-template-columns: 200px minmax(0, var(--prose-max));
+  grid-template-columns: minmax(0, var(--prose-max)) 200px;
   gap: 56px;
   justify-content: center;
 }
