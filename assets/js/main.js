@@ -5,38 +5,7 @@
 (function () {
   'use strict';
 
-  // 1. Theme toggle
-  var root = document.documentElement;
-  var themeBtn = document.getElementById('theme-toggle');
-
-  function getPreferredTheme() {
-    if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-      return 'dark';
-    }
-    return 'light';
-  }
-
-  try {
-    var savedTheme = window.localStorage.getItem('ui_theme_mode');
-    if (savedTheme === 'dark' || savedTheme === 'light') {
-      root.setAttribute('data-theme', savedTheme);
-    } else if (getPreferredTheme() === 'dark') {
-      root.setAttribute('data-theme', 'dark');
-    }
-  } catch (_) {}
-
-  if (themeBtn) {
-    themeBtn.addEventListener('click', function () {
-      var current = root.getAttribute('data-theme') === 'dark' ? 'dark' : 'light';
-      var next = current === 'dark' ? 'light' : 'dark';
-      root.setAttribute('data-theme', next);
-      try {
-        window.localStorage.setItem('ui_theme_mode', next);
-      } catch (_) {}
-    });
-  }
-
-  // 2. Mobile navigation menu
+  // 1. Mobile navigation menu
   var menuBtn = document.getElementById('menu-toggle');
   var siteNav = document.getElementById('site-nav');
   if (menuBtn && siteNav) {
