@@ -120,6 +120,60 @@
     searchInput.addEventListener('input', applyBlogFilter);
   }
 
+  // 5. Blog post like heart button (starts at 5 likes per post, persisted locally)
+  var likeBtns = Array.prototype.slice.call(document.querySelectorAll('[data-like-post]'));
+  function getLikedState(postKey) {
+    try {
+      return window.localStorage.getItem('wx_liked_' + postKey) === '1';
+    } catch (err) {
+      return false;
+    }
+  }
+
+  function setLikedState(postKey, liked) {
+    try {
+      if (liked) {
+        window.localStorage.setItem('wx_liked_' + postKey, '1');
+      } else {
+        window.localStorage.removeItem('wx_liked_' + postKey);
+      }
+    } catch (err) {}
+  }
+
+  function renderLikeBtn(btn, liked) {
+    var base = parseInt(btn.getAttribute('data-base-likes') || '5', 10);
+    var count = base + (liked ? 1 : 0);
+    var countEl = btn.querySelector('.like-count');
+    var outlineIcon = btn.querySelector('.heart-outline');
+    var filledIcon = btn.querySelector('.heart-filled');
+    if (countEl) {
+      countEl.textContent = String(count);
+    }
+    if (outlineIcon && filledIcon) {
+      outlineIcon.hidden = liked;
+      filledIcon.hidden = !liked;
+    }
+    btn.classList.toggle('is-liked', liked);
+    btn.setAttribute('aria-pressed', liked ? 'true' : 'false');
+    btn.setAttribute('aria-label', (liked ? 'Unlike post (' : 'Like post (') + count + ' likes)');
+  }
+
+  if (likeBtns.length) {
+    likeBtns.forEach(function (btn) {
+      var key = btn.getAttribute('data-like-post') || '';
+      renderLikeBtn(btn, getLikedState(key));
+      btn.addEventListener('click', function () {
+        var nextLiked = !btn.classList.contains('is-liked');
+        setLikedState(key, nextLiked);
+        likeBtns.forEach(function (other) {
+          if (other.getAttribute('data-like-post') === key) {
+            renderLikeBtn(other, nextLiked);
+          }
+        });
+      });
+    });
+  }
+
   // 6. Custom HTML5 Audio Player with <progress> scrubber (Caffeine Mode)
   var audioEl = document.getElementById('post-audio');
   var playBtn = document.getElementById('audio-play-btn');

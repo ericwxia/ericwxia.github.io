@@ -692,7 +692,7 @@ main {
   border-color: var(--border-strong);
 }
 
-.post-card > a {
+.post-card-main {
   display: flex;
   flex-direction: column;
   flex: 1;
@@ -716,7 +716,7 @@ main {
 }
 
 .post-card-body {
-  padding: 24px;
+  padding: 24px 24px 16px;
   display: flex;
   flex-direction: column;
   flex: 1;
@@ -755,21 +755,106 @@ main {
   font-size: 0.94rem;
   line-height: 1.65;
   color: var(--ink-secondary);
-  margin: 0 0 20px;
+  margin: 0;
   display: -webkit-box;
   -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
   overflow: hidden;
 }
 
-.post-card-footer {
+.post-card-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 12px 24px 18px;
   margin-top: auto;
+  border-top: 1px solid var(--border);
+}
+
+.post-card-footer {
   display: inline-flex;
   align-items: center;
   gap: 5px;
   font-size: 0.875rem;
   font-weight: 560;
   color: var(--accent);
+  transition: color 0.16s ease;
+}
+
+.post-card-footer:hover {
+  color: var(--accent-hover);
+}
+
+.like-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 5px 11px;
+  border-radius: 999px;
+  border: 1px solid transparent;
+  background: transparent;
+  color: var(--ink-secondary);
+  font-family: var(--font-sans);
+  font-size: 0.85rem;
+  font-weight: 500;
+  font-variant-numeric: tabular-nums;
+  cursor: pointer;
+  transition: color 0.16s ease, background-color 0.16s ease, border-color 0.16s ease, transform 0.14s ease;
+}
+
+.like-btn:hover {
+  background: var(--bg-subtle);
+  border-color: var(--border);
+  color: var(--ink);
+}
+
+.like-btn:active {
+  transform: scale(0.95);
+}
+
+.like-btn .heart-icon {
+  width: 16px;
+  height: 16px;
+  color: #e46c78;
+  transition: transform 0.18s ease, color 0.16s ease;
+}
+
+.like-btn:hover .heart-icon {
+  transform: scale(1.12);
+}
+
+.like-btn.is-liked {
+  color: var(--ink);
+  background: rgba(228, 108, 120, 0.12);
+  border-color: rgba(228, 108, 120, 0.28);
+}
+
+.like-btn.is-liked .heart-icon {
+  color: #ec6b78;
+}
+
+.like-btn-post {
+  border-color: var(--border);
+  background: var(--bg-elevated);
+  padding: 6px 14px;
+}
+
+.post-actions-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-top: 28px;
+}
+
+.post-actions-row .hashtag-row {
+  margin: 0;
+}
+
+.post-actions-end {
+  justify-content: flex-end;
 }
 
 /* Horizontal Related Post Card */
