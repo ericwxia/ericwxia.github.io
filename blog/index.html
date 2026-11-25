@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data:; media-src 'self'; style-src 'self' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; script-src 'self'; object-src 'none'; base-uri 'self'; form-action 'none';" />
+  <title>Blog | Wei Xia</title>
+  <meta name="description" content="Essays and personal writing by Wei Xia." />
+  <link rel="canonical" href="https://www.ericwxia.xyz/blog/" />
+  <link rel="icon" href="/favicon.ico" />
+  <meta property="og:title" content="Blog | Wei Xia" />
+  <meta property="og:description" content="Essays and personal writing by Wei Xia." />
+  <meta property="og:url" content="https://www.ericwxia.xyz/blog/" />
+  <meta property="og:site_name" content="Wei Xia" />
+  <meta property="og:image" content="https://www.ericwxia.xyz/assets/images/portrait.jpg" />
+  <meta property="og:type" content="website" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Google+Sans+Code:wght@400..600&family=Google+Sans+Flex:opsz,wght,ROND@14..48,400..700,0..100&family=Newsreader:ital,opsz,wght@0,6..72,400..600;1,6..72,400..500&family=Noto+Sans+SC:wght@400;500;600&family=Noto+Serif+SC:wght@400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/assets/css/styles.css" />
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Skip to content</a>
+
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand" href="/" id="nav-brand">
+        <span class="brand-swatch" aria-hidden="true"></span>
+        <span>Wei Xia</span>
+      </a>
+      <div class="nav-wrap">
+        <nav id="site-nav" class="site-nav" aria-label="Primary">
+          <a class="nav-link" href="/">Home</a>
+        <a class="nav-link" href="/media/">Media</a>
+        <a class="nav-link" href="/blog/" aria-current="page">Blog</a>
+        <a class="nav-link" href="/personal/">Personal</a>
+        </nav>
+        <button id="theme-toggle" class="icon-btn" type="button" aria-label="Toggle color theme" title="Toggle light or dark theme">
+          <svg class="icon theme-icon-dark" viewBox="0 0 24 24" aria-hidden="true"><path d="M12,21q-3.75,0-6.38-2.63T3,12T5.63,5.63T12,3q0.35,0 0.69,0.02q0.34,0.02 0.66,0.07q-1.03,0.73-1.64,1.89T11.1,7.5q0,2.25 1.57,3.82T16.5,12.9q1.38,0 2.53-0.61t1.88-1.64q0.05,0.33 0.07,0.66T21,12q0,3.75-2.63,6.38T12,21Zm0-2q2.2,0 3.95-1.21t2.55-3.16q-0.5,0.13-1,0.2t-1,0.08q-3.07,0-5.24-2.16Q9.1,10.58 9.1,7.5q0-0.5 0.08-1t0.2-1Q7.43,6.3 6.21,8.05T5,12q0,2.9 2.05,4.95T12,19Zm-0.25-6.75Z"/></svg>
+          <svg class="icon theme-icon-light" viewBox="0 0 24 24" aria-hidden="true"><path d="M14.13,14.13Q15,13.25 15,12T14.13,9.88T12,9T9.88,9.88T9,12t0.88,2.13T12,15t2.13-0.88ZM8.46,15.54Q7,14.08 7,12Q7,9.92 8.46,8.46T12,7t3.54,1.46T17,12t-1.46,3.54T12,17q-2.07,0-3.54-1.46ZM5,13H1V11H5v2Zm18,0H19V11h4v2ZM11,5V1h2V5H11Zm0,18V19h2v4H11ZM6.4,7.75L3.88,5.32L5.3,3.85l2.4,2.5L6.4,7.75Zm12.3,12.4l-2.42-2.52l1.32-1.38l2.52,2.43L18.7,20.15ZM16.25,6.4l2.43-2.52L20.15,5.3l-2.5,2.4l-1.4-1.3ZM3.85,18.7l2.53-2.43L7.75,17.6L5.33,20.13L3.85,18.7ZM12,12Z"/></svg>
+        </button>
+        <button id="menu-toggle" class="icon-btn menu-toggle" type="button" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="site-nav">
+          <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M3,18V16H21v2H3Zm0-5V11H21v2H3ZM3,8V6H21V8H3Z"/></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content">
+    <section class="page-hero">
+      <div class="container">
+        <p class="section-kicker">Writing</p>
+        <h1 class="page-title">Blog</h1>
+        <p class="page-subtitle">Speculative essays on AI and society, creative experiments, and neighborhood notes from New York.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="blog-toolbar">
+          <div class="filter-pills" role="group" aria-label="Filter posts by category">
+            <button class="filter-pill is-active" type="button" id="filter-all" data-filter-category="all" aria-pressed="true">All Posts</button>
+            <button class="filter-pill" type="button" id="filter-suibi" data-filter-category="随笔" aria-pressed="false" lang="zh-Hans">随笔</button>
+          </div>
+          <div class="search-field">
+            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M19.6,21l-6.3-6.3q-0.75,0.6-1.72,0.95T9.5,16q-2.72,0-4.61-1.89Q3,12.23 3,9.5Q3,6.77 4.89,4.89T9.5,3t4.61,1.89T16,9.5q0,1.1-0.35,2.07T14.7,13.3L21,19.6L19.6,21ZM9.5,14q1.88,0 3.19-1.31T14,9.5T12.69,6.31T9.5,5T6.31,6.31T5,9.5t1.31,3.19T9.5,14Z"/></svg>
+            <input id="blog-search-input" class="search-input" type="search" placeholder="Search posts..." aria-label="Search posts" />
+          </div>
+        </div>
+
+        
+      <div class="post-grid">
+        <article class="post-card" data-post-card data-category="essay">
+          <a href="/post/romantic-earth-v-0-1/" id="post-card-romantic-earth">
+            <div class="post-card-cover">
+              <img src="/assets/images/romantic-earth-cover.jpg" alt="Romantic Earth: V-0.1 cover artwork" loading="lazy" />
+            </div>
+            <div class="post-card-body">
+              <div class="post-card-meta">
+                <span>Nov 16, 2025</span>
+                <span>&middot;</span>
+                <span>7 min read</span>
+              </div>
+              <h3 class="post-card-title">Romantic Earth: V-0.1</h3>
+              <p class="post-card-excerpt">The rapid development of Artificial General Intelligence (AGI) suggests a proactive approach is needed for the impending paradigm shift in human societal structure. As autonomous systems begin to manage the logistical and material foundations of civilization, humanity may face a &ldquo;post-work alignment problem.&rdquo;</p>
+              <span class="post-card-footer">Read essay <svg class="icon icon-sm" viewBox="0 0 24 24" aria-hidden="true"><path d="M6.4,18L5,16.6L14.6,7H6V5H18V17H16V8.4L6.4,18Z"/></svg></span>
+            </div>
+          </a>
+        </article>
+
+        <article class="post-card" data-post-card data-category="随笔">
+          <a href="/post/%E7%BA%BD%E7%BA%A6%E9%A3%8E%E5%91%B3%E8%A7%92%E8%90%BD/" id="post-card-ny-corners">
+            <div class="post-card-cover">
+              <img src="/assets/images/ny-bakery-cover.jpg" alt="纽约风味角落 artisan breads" loading="lazy" />
+            </div>
+            <div class="post-card-body">
+              <div class="post-card-meta">
+                <span class="post-card-tag">随笔</span>
+                <span>Oct 4, 2025</span>
+                <span>&middot;</span>
+                <span>3 min read</span>
+              </div>
+              <h3 class="post-card-title" lang="zh-Hans">纽约风味角落：面包师与酵母老佛爷</h3>
+              <p class="post-card-excerpt" lang="zh-Hans">纽约烘焙界流传着一个传说，关于“面包暴君”杜布瓦先生（Monsieur Dubois）。传说想在他店里当学徒，你唯一的任务，就是先伺候好他那缸名叫“夏娃”的百年酵母种……附纽约烘焙、咖啡与抹茶风味地图及原创 AI 歌曲 Caffeine Mode。</p>
+              <span class="post-card-footer">Read story <svg class="icon icon-sm" viewBox="0 0 24 24" aria-hidden="true"><path d="M6.4,18L5,16.6L14.6,7H6V5H18V17H16V8.4L6.4,18Z"/></svg></span>
+            </div>
+          </a>
+        </article>
+      </div>
+
+
+        <div id="blog-empty-state" class="empty-state" hidden>
+          No posts match your search.
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <span>&copy; Wei Xia &middot; Contact: <span class="contact-handle">eric.w.xia#gmail</span></span>
+      <div class="footer-links">
+        <a href="/">Home</a>
+        <a href="/media/">Media</a>
+        <a href="/blog/">Blog</a>
+        <a href="/personal/">Personal</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="/assets/js/main.js" defer></script>
+</body>
+</html>
