@@ -38,16 +38,16 @@ python3 -m http.server 8765 --bind 127.0.0.1
 
 ### Option A: GitHub Pages (Recommended)
 
-1. Create a public repository on GitHub (e.g., `ericwxia/ericwxia.github.io` or `ericwxia/website`).
-2. Push this directory:
+1. Create a public repository named **`ericwxia.github.io`** at `https://github.com/new` under your `ericwxia` account (leave it empty — do not initialize with a README).
+2. Push this directory (`origin` is already configured to `https://github.com/ericwxia/ericwxia.github.io.git`):
    ```bash
    cd ~/Projects/ericwxia-website
-   git remote add origin git@github.com:<YOUR_GITHUB_USERNAME>/<REPO_NAME>.git
    git push -u origin main
    ```
-3. In GitHub **Settings → Pages**:
+3. In **https://github.com/ericwxia/ericwxia.github.io/settings/pages**:
    - Under **Build and deployment**, set **Source** to **GitHub Actions** (uses `.github/workflows/deploy.yml`).
-   - Confirm **Custom domain** shows `www.ericwxia.xyz` and check **Enforce HTTPS** once DNS propagates.
+   - Within ~1 minute, verify the live preview at **https://ericwxia.github.io/**.
+   - After updating NameSilo DNS below, enter **`www.ericwxia.xyz`** under **Custom domain**, click **Save**, and enable **Enforce HTTPS** once the certificate finishes provisioning.
 
 ### Option B: Cloudflare Pages
 
@@ -63,7 +63,7 @@ python3 -m http.server 8765 --bind 127.0.0.1
    - Log in to **NameSilo → Domain Manager**, select `ericwxia.xyz`, and click **Change Nameservers**.
    - Replace `ns10.wixdns.net` / `ns11.wixdns.net` with NameSilo's default nameservers (`ns1.dnsowl.com`, `ns2.dnsowl.com`, `ns3.dnsowl.com`) — or Cloudflare's nameservers if using Cloudflare Pages.
 2. **Add GitHub Pages DNS Records** (in NameSilo **Manage DNS**):
-   - `CNAME` record: `www` → `<YOUR_GITHUB_USERNAME>.github.io`
+   - `CNAME` record: `www` → `ericwxia.github.io`
    - Four `A` records for `@` (`ericwxia.xyz`):
      - `185.199.108.153`
      - `185.199.109.153`
