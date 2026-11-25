@@ -863,16 +863,13 @@ main {
   padding: 48px 0 64px;
 }
 
-.personal-prose p {
-  font-size: 1.075rem;
+.personal-prose > p {
+  font-family: var(--font-sans);
+  font-size: 1.08rem;
+  font-weight: 430;
   line-height: 1.8;
-  color: var(--ink-secondary);
-  margin: 0 0 22px;
-}
-
-.personal-prose p:first-child {
   color: var(--ink);
-  font-size: 1.14rem;
+  margin: 0 0 22px;
 }
 
 .places-strip {
