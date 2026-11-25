@@ -1,29 +1,30 @@
 # Wei Xia — Personal Website (`ericwxia.xyz`)
 
-Standalone, zero-cost static website replacing Wix for **https://www.ericwxia.xyz/**. All text, external press links, essays, figures, photography, AI song (`Caffeine Mode`), and music video (`Romantic Earth`) are bundled locally under `assets/` with zero runtime dependency on Wix servers.
+Standalone, zero-cost static website replacing Wix for **https://www.ericwxia.xyz/**. All text, press & research links, essays, vector figures, photography, AI song (`Caffeine Mode`), and music video (`Romantic Earth`) are bundled locally under `assets/` with zero runtime dependency on Wix servers.
 
 ## Directory Layout
 
 ```text
 ericwxia-website/
-├── index.html                          # Home (bio, contact, portrait, highlights)
-├── media/index.html                    # Selected Media Coverage (7 features)
-├── blog/index.html                     # Blog index with category & search filter
+├── index.html                          # Minimalist Zen homepage (bio, portrait, Scholar, 3 media highlights, 2 recent writings)
+├── media/index.html                    # Media Coverage (8 features across Gemini, YouTube, Meet, Voice Search, Google AI, Pixel, ML science)
+├── blog/index.html                     # Blog index with category/search filter & interactive 5-heart likes
 ├── blog/categories/随笔/index.html     # Category route parity
-├── personal/index.html                 # Personal bio & places lived
-├── post/romantic-earth-v-0-1/index.html# Essay 1 + HTML5 MV + Figures 1-2 + Eq. 1 + Table 1
-├── post/纽约风味角落/index.html         # Essay 2 + Caffeine Mode audio + 15-photo NYC gallery
+├── personal/index.html                 # Personal bio & oil canvas artwork
+├── post/romantic-earth-v-0-1/index.html# Essay 1 + HTML5 MV + SVG Figures 1–2 + Eq. 1 + Table 1 + right-margin TOC
+├── post/纽约风味角落/index.html         # Essay 2 + Caffeine Mode audio player + 15-photo NYC gallery & lightbox
 ├── post/ny-flavor-corners/index.html   # Clean ASCII alias for Essay 2
+├── blog-feed.xml                       # RSS 2.0 feed preserving Wix blog feed URL
 ├── 404.html                            # Custom 404 page
 ├── CNAME                               # Custom domain for GitHub Pages (www.ericwxia.xyz)
-├── _headers                            # Security & cache headers (Cloudflare Pages / Netlify)
+├── _headers                            # Strict CSP & cache headers (Cloudflare Pages / Netlify)
 ├── sitemap.xml                         # Search engine sitemap
 ├── .github/workflows/deploy.yml        # Automated GitHub Pages deployment workflow
 └── assets/
-    ├── css/styles.css                  # Editorial design system (Light & Dark themes)
-    ├── js/main.js                      # Theme toggle, audio player, search, lightbox
-    ├── images/                         # Optimized portraits, figures, and NYC gallery photos
-    └── media/                          # romantic-earth-mv.mp4 (14.7 MB) & caffeine-mode.mp3
+    ├── css/styles.css                  # Soft dimmed-graphite dark design system (#24262b)
+    ├── js/main.js                      # Audio player, blog likes, search/category filter, TOC spy, lightbox
+    ├── images/                         # Optimized portrait & 15 NYC gallery photos (5.0 MB total)
+    └── media/                          # romantic-earth-mv.mp4 (14.7 MB) & caffeine-mode.mp3 (2.4 MB)
 ```
 
 ## Local Preview
@@ -50,21 +51,23 @@ python3 -m http.server 8765 --bind 127.0.0.1
 
 ### Option B: Cloudflare Pages
 
-1. Connect the GitHub repo (or upload this folder via `npx wrangler pages deploy .`) in the Cloudflare Dashboard under **Workers & Pages**.
+1. Connect the GitHub repo (or upload via `npx wrangler pages deploy .`) in the Cloudflare Dashboard under **Workers & Pages**.
 2. Build command: *(leave blank)* · Build output directory: `/`.
-3. Add custom domains `ericwxia.xyz` and `www.ericwxia.xyz` (the `_headers` file automatically configures CSP, clickjacking protection, and 1-year asset caching).
+3. Add custom domains `ericwxia.xyz` and `www.ericwxia.xyz` (`_headers` automatically applies strict CSP and 1-year asset caching).
 
-### Step-by-Step DNS Cutover & Cancelling Wix
+### Step-by-Step DNS Cutover (NameSilo → GitHub Pages / Cloudflare) & Cancelling Wix
 
-1. **Check where `ericwxia.xyz` is registered** (`whois ericwxia.xyz`):
-   - **If registered externally** (Namecheap, Porkbun, Spaceship, Squarespace/Google Domains, Cloudflare): replace the Wix nameservers (`ns*.wixdns.net`) with your registrar's default DNS (or Cloudflare's free DNS).
-   - **If purchased directly inside Wix**: in **Wix Dashboard → Domains**, either point DNS records away or click **Transfer Away from Wix** to move the domain to Cloudflare Registrar / Porkbun (~$10–$12/yr at wholesale cost) *before* turning off domain auto-renew.
-2. **Set DNS records** (for GitHub Pages):
+`ericwxia.xyz` is already registered at **NameSilo** (not Wix); Wix only hosts its nameservers (`ns10.wixdns.net`, `ns11.wixdns.net`), and there are no MX email records on the domain.
+
+1. **Switch Nameservers at NameSilo**:
+   - Log in to **NameSilo → Domain Manager**, select `ericwxia.xyz`, and click **Change Nameservers**.
+   - Replace `ns10.wixdns.net` / `ns11.wixdns.net` with NameSilo's default nameservers (`ns1.dnsowl.com`, `ns2.dnsowl.com`, `ns3.dnsowl.com`) — or Cloudflare's nameservers if using Cloudflare Pages.
+2. **Add GitHub Pages DNS Records** (in NameSilo **Manage DNS**):
    - `CNAME` record: `www` → `<YOUR_GITHUB_USERNAME>.github.io`
    - Four `A` records for `@` (`ericwxia.xyz`):
      - `185.199.108.153`
      - `185.199.109.153`
      - `185.199.110.153`
      - `185.199.111.153`
-3. **Cancel Wix Premium Subscription**:
-   - Once `https://www.ericwxia.xyz` loads from GitHub Pages / Cloudflare Pages with HTTPS active, go to **Wix Account Settings → Subscriptions**, select your **Website Plan**, and click **Cancel Plan** to stop recurring monthly charges.
+3. **Cancel Wix Premium Plan**:
+   - Once `https://www.ericwxia.xyz` loads from GitHub Pages / Cloudflare Pages with HTTPS active, open **Wix Account Settings → Subscriptions**, select your **Website Plan**, and click **Cancel Plan** to stop recurring monthly charges.

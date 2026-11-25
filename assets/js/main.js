@@ -36,14 +36,12 @@
   }
 
   var tocLinks = Array.prototype.slice.call(document.querySelectorAll('[data-toc-link]'));
-  if (tocLinks.length && 'IntersectionObserver' in window) {
-    var headingMap = {};
+  if (tocLinks.length) {
     var headings = [];
     tocLinks.forEach(function (link) {
       var id = (link.getAttribute('href') || '').replace('#', '');
       var target = id ? document.getElementById(id) : null;
       if (target) {
-        headingMap[id] = link;
         headings.push(target);
       }
     });
@@ -55,15 +53,37 @@
       });
     };
 
-    var observer = new IntersectionObserver(function (entries) {
-      entries.forEach(function (entry) {
-        if (entry.isIntersecting) {
-          setActiveToc(entry.target.id);
+    var tocTicking = false;
+    var updateActiveToc = function () {
+      if (!headings.length) {
+        tocTicking = false;
+        return;
+      }
+      var scrollY = window.scrollY || document.documentElement.scrollTop || 0;
+      var atBottom = (window.innerHeight + scrollY) >= (document.documentElement.scrollHeight - 40);
+      var currentId = headings[0].id;
+      if (atBottom) {
+        currentId = headings[headings.length - 1].id;
+      } else {
+        var threshold = scrollY + 140;
+        for (var i = 0; i < headings.length; i++) {
+          var top = headings[i].getBoundingClientRect().top + scrollY;
+          if (top <= threshold) {
+            currentId = headings[i].id;
+          }
         }
-      });
-    }, { rootMargin: '-15% 0px -72% 0px', threshold: 0 });
+      }
+      setActiveToc(currentId);
+      tocTicking = false;
+    };
 
-    headings.forEach(function (h) { observer.observe(h); });
+    window.addEventListener('scroll', function () {
+      if (!tocTicking) {
+        window.requestAnimationFrame(updateActiveToc);
+        tocTicking = true;
+      }
+    }, { passive: true });
+    updateActiveToc();
   }
 
   // 4. Blog category & search filter
