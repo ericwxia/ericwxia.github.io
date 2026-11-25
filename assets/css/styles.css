@@ -16,9 +16,9 @@
   --ink-muted: #8e8a80;
   --border: rgba(243, 240, 232, 0.10);
   --border-strong: rgba(243, 240, 232, 0.22);
-  --accent: #74afd6;
-  --accent-hover: #96c5e4;
-  --accent-soft: rgba(116, 175, 214, 0.13);
+  --accent: #c4c0b6;
+  --accent-hover: #f3f0e8;
+  --accent-soft: rgba(243, 240, 232, 0.08);
   --header-bg: rgba(17, 17, 16, 0.88);
   --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.34);
   --shadow-md: 0 14px 36px -10px rgba(0, 0, 0, 0.54);
@@ -318,20 +318,32 @@ main {
   margin: 0;
 }
 
+.section-links {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  flex-shrink: 0;
+}
+
+.section-sep {
+  color: var(--border-strong);
+  user-select: none;
+}
+
 .section-more {
   display: inline-flex;
   align-items: center;
   gap: 4px;
-  font-size: 0.9rem;
-  font-weight: 520;
-  color: var(--accent);
+  font-size: 0.88rem;
+  font-weight: 480;
+  color: var(--ink-muted);
   white-space: nowrap;
   flex-shrink: 0;
   transition: color 0.16s ease;
 }
 
 .section-more:hover {
-  color: var(--accent-hover);
+  color: var(--ink);
 }
 
 .section-more .icon {
@@ -437,51 +449,17 @@ main {
   letter-spacing: -0.01em;
 }
 
-.scholar-pill {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  padding: 8px 16px;
-  border-radius: 999px;
-  background: var(--accent-soft);
-  border: 1px solid rgba(116, 175, 214, 0.28);
-  color: var(--ink);
-  font-size: 0.88rem;
-  font-weight: 520;
-  box-shadow: var(--shadow-sm);
-  transition: background-color 0.18s ease, border-color 0.18s ease, transform 0.18s ease;
-}
-
-.scholar-pill .scholar-icon {
-  color: var(--accent);
-}
-
-.scholar-pill .scholar-arrow {
-  color: var(--accent);
-  transition: transform 0.18s ease;
-}
-
-.scholar-pill:hover {
-  background: rgba(116, 175, 214, 0.2);
-  border-color: var(--accent);
-  transform: translateY(-1px);
-}
-
-.scholar-pill:hover .scholar-arrow {
-  transform: translate(2px, -2px);
-}
-
 .inline-link {
-  color: var(--accent);
+  color: inherit;
   text-decoration: underline;
-  text-decoration-color: rgba(116, 175, 214, 0.4);
+  text-decoration-color: rgba(243, 240, 232, 0.28);
   text-underline-offset: 3px;
   transition: color 0.16s ease, text-decoration-color 0.16s ease;
 }
 
 .inline-link:hover {
-  color: var(--accent-hover);
-  text-decoration-color: var(--accent-hover);
+  color: var(--ink);
+  text-decoration-color: rgba(243, 240, 232, 0.8);
 }
 
 /* Compact Portrait Frame */
