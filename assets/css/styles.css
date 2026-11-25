@@ -832,6 +832,52 @@ main {
   justify-content: center;
 }
 
+/* Zen Minimalist Writing List (Homepage) */
+.zen-post-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  border-top: 1px solid var(--border);
+}
+
+.zen-post-item {
+  border-bottom: 1px solid var(--border);
+}
+
+.zen-post-link {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 24px;
+  padding: 18px 12px;
+  margin: 0 -12px;
+  border-radius: var(--radius-sm);
+  transition: background-color 0.16s ease;
+}
+
+.zen-post-link:hover {
+  background-color: var(--bg-subtle);
+}
+
+.zen-post-title {
+  font-size: 1.05rem;
+  font-weight: 520;
+  color: var(--ink);
+  transition: color 0.16s ease;
+}
+
+.zen-post-link:hover .zen-post-title {
+  color: var(--accent);
+}
+
+.zen-post-date {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  color: var(--ink-muted);
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
 .empty-state {
   padding: 40px 24px;
   text-align: center;
