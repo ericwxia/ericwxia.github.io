@@ -438,15 +438,35 @@ main {
 }
 
 /* Compact Portrait Frame */
+.hero-aside {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-left: auto;
+}
+
 .portrait-card {
   width: 196px;
   max-width: 196px;
-  margin-left: auto;
   border: 1px solid var(--border);
   border-radius: 16px;
   overflow: hidden;
   box-shadow: var(--shadow-md);
   background: var(--bg-obsidian);
+}
+
+.hero-social {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+  width: 100%;
+  margin-top: 14px;
+}
+
+.social-logo-scholar {
+  width: 18px;
+  height: 18px;
 }
 
 .portrait-frame {
@@ -1852,11 +1872,22 @@ main {
     gap: 32px;
   }
 
-  .portrait-card {
+  .hero-aside {
     order: -1;
+    margin: 0;
+    align-items: flex-start;
+  }
+
+  .portrait-card {
     margin: 0;
     width: 148px;
     max-width: 148px;
+  }
+
+  .hero-social {
+    width: 148px;
+    gap: 13px;
+    margin-top: 12px;
   }
 
   .personal-layout {
