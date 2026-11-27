@@ -358,4 +358,48 @@
       }
     });
   }
+
+  // 8. WeChat QR Code Modal (lazy-loads QR image on click, accessible keyboard/backdrop close)
+  var qrBtn = document.getElementById('wechat-qr-btn');
+  var qrModal = document.getElementById('qr-modal');
+  var qrImg = document.getElementById('qr-modal-img');
+  var qrClose = document.getElementById('qr-modal-close');
+
+  if (qrBtn && qrModal && qrImg) {
+    var openQrModal = function () {
+      var src = qrBtn.getAttribute('data-qr-src') || '';
+      if (src && !qrImg.getAttribute('src')) {
+        qrImg.setAttribute('src', src);
+      }
+      qrModal.hidden = false;
+      document.body.classList.add('is-modal-open');
+      if (qrClose) {
+        qrClose.focus();
+      }
+    };
+
+    var closeQrModal = function () {
+      if (qrModal.hidden) {
+        return;
+      }
+      qrModal.hidden = true;
+      document.body.classList.remove('is-modal-open');
+      qrBtn.focus();
+    };
+
+    qrBtn.addEventListener('click', openQrModal);
+    if (qrClose) {
+      qrClose.addEventListener('click', closeQrModal);
+    }
+    qrModal.addEventListener('click', function (e) {
+      if (e.target === qrModal) {
+        closeQrModal();
+      }
+    });
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape' && !qrModal.hidden) {
+        closeQrModal();
+      }
+    });
+  }
 })();
