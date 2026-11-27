@@ -65,29 +65,16 @@
           </div>
         </header>
 
-        <div class="audio-player-card" lang="en">
-          <img class="audio-cover" src="../../assets/images/caffeine-mode-cover.jpg" alt="Caffeine Mode cover art" />
-          <button id="audio-play-btn" class="audio-play-btn" type="button" aria-label="Play Caffeine Mode">
-            <svg id="audio-icon-play" class="icon icon-lg" viewBox="0 0 24 24" aria-hidden="true"><path d="M8,19V5l11,7L8,19Zm2-7Zm0,3.35L15.25,12L10,8.65v6.7Z"/></svg>
-            <svg id="audio-icon-pause" class="icon icon-lg" viewBox="0 0 24 24" aria-hidden="true" hidden><path d="M13,19V5h6V19H13ZM5,19V5h6V19H5Zm10-2h2V7H15V17ZM7,17H9V7H7V17ZM7,7V17V7Zm8,0V17V7Z"/></svg>
-          </button>
-          <div class="audio-body">
-            <div class="audio-top">
-              <div class="audio-title-wrap">
-                <span class="audio-title">Caffeine Mode</span>
-                <span class="audio-artist">AI song by Wei Xia</span>
-              </div>
-              <div class="audio-meta-right">
-                <a class="lyrics-jump" href="#caffeine-mode-lyrics">Lyrics &darr;</a>
-                <span id="audio-time" class="audio-time">0:00 / 1:38</span>
-              </div>
-            </div>
-            <div id="audio-scrub" class="audio-scrub" role="slider" tabindex="0" aria-label="Seek Caffeine Mode playback" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
-              <progress id="audio-progress" class="audio-progress" value="0" max="100"></progress>
-            </div>
-          </div>
-          <audio id="post-audio" preload="metadata" src="../../assets/media/caffeine-mode.mp3"></audio>
-        </div>
+        <figure class="video-card video-card-portrait" lang="en">
+          <video controls playsinline preload="metadata" poster="../../assets/images/nyc-flavor-mv-poster.jpg">
+            <source src="../../assets/media/nyc-flavor-mv.mp4" type="video/mp4" />
+            Your browser does not support HTML5 video.
+          </video>
+          <figcaption class="video-caption">
+            <span>Music Video</span>
+            <a class="lyrics-jump" href="#caffeine-mode-lyrics">Lyrics &darr;</a>
+          </figcaption>
+        </figure>
 
         <div class="prose prose-zh">
           <p>纽约烘焙界流传着一个传说，关于“面包暴君”杜布瓦先生（Monsieur Dubois）。传说想在他店里当学徒，你唯一的任务，就是先伺候好他那缸名叫“夏娃”的百年酵母种。</p>

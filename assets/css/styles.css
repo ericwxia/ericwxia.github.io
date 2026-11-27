@@ -1279,9 +1279,24 @@ main {
   width: 100%;
   aspect-ratio: 16 / 9;
   background: #000000;
+  display: block;
+}
+
+.video-card-portrait {
+  max-width: 280px;
+  margin: 24px auto 34px;
+}
+
+.video-card-portrait video {
+  aspect-ratio: 9 / 16;
+  max-height: 498px;
 }
 
 .video-caption {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
   padding: 11px 18px;
   font-family: var(--font-mono);
   font-size: 0.78rem;
