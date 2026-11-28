@@ -1220,14 +1220,22 @@ main {
   letter-spacing: -0.01em;
 }
 
+.title-clause {
+  display: inline-block;
+}
+
 .article-byline {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  gap: 10px;
+  gap: 6px 10px;
   font-family: var(--font-mono);
   font-size: 0.8rem;
   color: var(--ink-muted);
+}
+
+.byline-updated {
+  white-space: nowrap;
 }
 
 .hashtag-row {
@@ -1636,8 +1644,26 @@ main {
 }
 
 .prose.prose-zh {
-  font-size: 1.08rem;
-  line-height: 1.95;
+  font-size: 1.075rem;
+  line-height: 1.96;
+  letter-spacing: 0.015em;
+}
+
+.prose.prose-zh p {
+  text-align: justify;
+  text-justify: inter-ideograph;
+  margin: 0 0 1.3em;
+}
+
+.story-break {
+  text-align: center !important;
+  margin: 1.8em 0 !important;
+  font-family: var(--font-sans);
+  font-size: 0.9rem;
+  letter-spacing: 0.5em;
+  color: var(--ink-muted);
+  opacity: 0.6;
+  user-select: none;
 }
 
 .prose p {
@@ -1692,12 +1718,24 @@ main {
 }
 
 .prose-divider {
-  text-align: center;
-  margin: 2.4em 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  margin: 2.5em 0 2.2em !important;
   font-family: var(--font-sans);
-  font-size: 0.92rem;
+  font-size: 0.88rem;
   color: var(--ink-muted);
-  letter-spacing: 0.2em;
+  letter-spacing: 0.25em;
+  text-align: center !important;
+}
+
+.prose-divider::before,
+.prose-divider::after {
+  content: "";
+  width: 44px;
+  height: 1px;
+  background: var(--border-strong);
 }
 
 /* Publication SVG Figures (Theme-adaptive!) */
@@ -1882,6 +1920,46 @@ main {
   font-weight: 560;
 }
 
+/* Companion Chapter Sections (NYC Post) */
+.chapter-section {
+  margin: 42px 0 44px;
+  padding-top: 28px;
+  border-top: 1px solid var(--border);
+  scroll-margin-top: 90px;
+}
+
+.chapter-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 8px 16px;
+  margin-bottom: 18px;
+}
+
+.chapter-title {
+  font-family: var(--font-sans);
+  font-size: 1.18rem;
+  font-weight: 630;
+  letter-spacing: -0.01em;
+  margin: 0;
+  color: var(--ink);
+}
+
+.chapter-meta {
+  font-family: var(--font-mono);
+  font-size: 0.76rem;
+  color: var(--ink-muted);
+}
+
+.chapter-section .gallery-editorial {
+  margin: 0 0 18px;
+}
+
+.chapter-section .video-card {
+  margin: 0;
+}
+
 /* Editorial Magazine Gallery Grid (NYC Post) */
 .gallery-editorial {
   display: grid;
@@ -1950,8 +2028,8 @@ main {
   background: var(--bg-elevated);
   border: 1px solid var(--border);
   border-radius: var(--radius-md);
-  padding: 22px 24px;
-  margin: 18px 0 38px;
+  padding: 18px;
+  margin: 16px 0 0;
   font-family: var(--font-sans);
 }
 
@@ -1968,21 +2046,27 @@ main {
   margin: 0;
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 12px 24px;
+  gap: 10px;
 }
 
 .spot-list li {
-  font-size: 0.9rem;
-  line-height: 1.55;
+  font-size: 0.885rem;
+  line-height: 1.66;
   color: var(--ink-secondary);
   margin: 0;
+  padding: 12px 14px;
+  background: rgba(36, 38, 43, 0.48);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  text-wrap: pretty;
 }
 
 .spot-list strong {
-  color: var(--ink);
+  color: var(--accent);
   font-weight: 600;
+  font-size: 0.92rem;
   display: block;
-  margin-bottom: 2px;
+  margin-bottom: 4px;
 }
 
 .lyrics-card {
@@ -2196,7 +2280,63 @@ main {
   }
 
   .audio-player-card {
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: 48px 40px minmax(0, 1fr);
+    align-items: center;
+    gap: 12px 12px;
+    padding: 14px 15px;
+  }
+
+  .audio-cover {
+    width: 48px;
+    height: 48px;
+  }
+
+  .audio-play-btn {
+    width: 40px;
+    height: 40px;
+  }
+
+  .audio-body {
+    display: contents;
+  }
+
+  .audio-top {
+    display: contents;
+  }
+
+  .audio-title-wrap {
+    grid-column: 3;
+    grid-row: 1;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 2px;
+  }
+
+  .audio-scrub {
+    grid-column: 1 / -1;
+    grid-row: 2;
+    padding: 4px 0 2px;
+  }
+
+  .audio-meta-right {
+    grid-column: 1 / -1;
+    grid-row: 3;
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .spot-guide {
+    padding: 12px;
+  }
+
+  .chapter-section {
+    margin: 34px 0 36px;
+    padding-top: 22px;
+  }
+
+  .byline-sep-updated {
+    display: none;
   }
 
   .search-field {
