@@ -1,9 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://www.ericwxia.xyz/</loc></url>
-  <url><loc>https://www.ericwxia.xyz/media/</loc></url>
-  <url><loc>https://www.ericwxia.xyz/blog/</loc></url>
-  <url><loc>https://www.ericwxia.xyz/personal/</loc></url>
-  <url><loc>https://www.ericwxia.xyz/post/romantic-earth-v-0-1/</loc></url>
-  <url><loc>https://www.ericwxia.xyz/post/%E7%BA%BD%E7%BA%A6%E9%A3%8E%E5%91%B3%E8%A7%92%E8%90%BD/</loc></url>
+  <url>
+    <loc>https://www.ericwxia.xyz/</loc>
+    <lastmod>2026-11-28</lastmod>
+  </url>
+  <url>
+    <loc>https://www.ericwxia.xyz/media/</loc>
+    <lastmod>2026-11-28</lastmod>
+  </url>
+  <url>
+    <loc>https://www.ericwxia.xyz/blog/</loc>
+    <lastmod>2026-11-28</lastmod>
+  </url>
+  <url>
+    <loc>https://www.ericwxia.xyz/personal/</loc>
+    <lastmod>2026-11-28</lastmod>
+  </url>
+  <url>
+    <loc>https://www.ericwxia.xyz/post/romantic-earth-v-0-1/</loc>
+    <lastmod>2026-11-28</lastmod>
+  </url>
+  <url>
+    <loc>https://www.ericwxia.xyz/post/%E7%BA%BD%E7%BA%A6%E9%A3%8E%E5%91%B3%E8%A7%92%E8%90%BD/</loc>
+    <lastmod>2026-11-28</lastmod>
+  </url>
 </urlset>
