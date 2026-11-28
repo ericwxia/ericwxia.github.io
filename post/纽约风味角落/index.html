@@ -6,12 +6,12 @@
   <meta name="theme-color" content="#24262b" />
   <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data:; media-src 'self'; style-src 'self' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; script-src 'self'; object-src 'none'; base-uri 'self'; form-action 'none';" />
   <title>纽约风味角落：面包师与酵母老佛爷 | Wei Xia</title>
-  <meta name="description" content="纽约烘焙界流传着一个传说，关于“面包暴君”杜布瓦先生与百年酵母种“夏娃”……附纽约烘焙咖啡抹茶地图与 AI 歌曲 Caffeine Mode。" />
+  <meta name="description" content="纽约烘焙界流传着一个传说，关于“面包暴君”杜布瓦先生与百年酵母种“夏娃”……附纽约烘焙咖啡抹茶地图与音乐短片《风味角落》。" />
   <link rel="canonical" href="https://www.ericwxia.xyz/post/%E7%BA%BD%E7%BA%A6%E9%A3%8E%E5%91%B3%E8%A7%92%E8%90%BD/" />
   <link rel="alternate" type="application/rss+xml" title="Wei Xia — Blog" href="https://www.ericwxia.xyz/blog-feed.xml" />
   <link rel="icon" href="../../favicon.ico" />
   <meta property="og:title" content="纽约风味角落：面包师与酵母老佛爷 | Wei Xia" />
-  <meta property="og:description" content="纽约烘焙界流传着一个传说，关于“面包暴君”杜布瓦先生与百年酵母种“夏娃”……附纽约烘焙咖啡抹茶地图与 AI 歌曲 Caffeine Mode。" />
+  <meta property="og:description" content="纽约烘焙界流传着一个传说，关于“面包暴君”杜布瓦先生与百年酵母种“夏娃”……附纽约烘焙咖啡抹茶地图与音乐短片《风味角落》。" />
   <meta property="og:url" content="https://www.ericwxia.xyz/post/%E7%BA%BD%E7%BA%A6%E9%A3%8E%E5%91%B3%E8%A7%92%E8%90%BD/" />
   <meta property="og:site_name" content="Wei Xia" />
   <meta property="og:image" content="https://www.ericwxia.xyz/assets/images/ny-bakery-cover.jpg" />
@@ -19,7 +19,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Google+Sans+Code:wght@400..600&amp;family=Google+Sans+Flex:opsz,wght,ROND@14..48,400..700,0..100&amp;family=Newsreader:ital,opsz,wght@1,6..72,400..500&amp;family=Noto+Sans+SC:wght@400;500;600&amp;family=Noto+Serif+SC:wght@400;600&amp;display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="../../assets/css/styles.css" />
+  <link rel="stylesheet" href="../../assets/css/styles.css?v=2" />
 </head>
 <body>
   <a class="skip-link" href="#main-content">Skip to content</a>
@@ -65,16 +65,29 @@
           </div>
         </header>
 
-        <figure class="video-card video-card-portrait" lang="en">
-          <video controls playsinline preload="metadata" poster="../../assets/images/nyc-flavor-mv-poster.jpg">
-            <source src="../../assets/media/nyc-flavor-mv.mp4" type="video/mp4" />
-            Your browser does not support HTML5 video.
-          </video>
-          <figcaption class="video-caption">
-            <span>Music Video</span>
-            <a class="lyrics-jump" href="#caffeine-mode-lyrics">Lyrics &darr;</a>
-          </figcaption>
-        </figure>
+        <div class="audio-player-card">
+          <img class="audio-cover" src="../../assets/images/nyc-flavor-cover.jpg" alt="风味角落封面" />
+          <button id="audio-play-btn" class="audio-play-btn" type="button" aria-label="Play 风味角落">
+            <svg id="audio-icon-play" class="icon icon-lg" viewBox="0 0 24 24" aria-hidden="true"><path d="M8,19V5l11,7L8,19Zm2-7Zm0,3.35L15.25,12L10,8.65v6.7Z"/></svg>
+            <svg id="audio-icon-pause" class="icon icon-lg" viewBox="0 0 24 24" aria-hidden="true" hidden><path d="M13,19V5h6V19H13ZM5,19V5h6V19H5Zm10-2h2V7H15V17ZM7,17H9V7H7V17ZM7,7V17V7Zm8,0V17V7Z"/></svg>
+          </button>
+          <div class="audio-body">
+            <div class="audio-top">
+              <div class="audio-title-wrap">
+                <span class="audio-title">风味角落</span>
+                <span class="audio-artist" lang="en">BGM</span>
+              </div>
+              <div class="audio-meta-right" lang="en">
+                <a class="lyrics-jump" href="#flavor-corners-video">Video &darr;</a>
+                <span id="audio-time" class="audio-time">0:00 / 3:24</span>
+              </div>
+            </div>
+            <div id="audio-scrub" class="audio-scrub" role="slider" tabindex="0" aria-label="Seek 风味角落 playback" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+              <progress id="audio-progress" class="audio-progress" value="0" max="100"></progress>
+            </div>
+          </div>
+          <audio id="post-audio" preload="metadata" data-track-title="风味角落" src="../../assets/media/nyc-flavor-bgm.mp3"></audio>
+        </div>
 
         <div class="prose prose-zh">
           <p>纽约烘焙界流传着一个传说，关于“面包暴君”杜布瓦先生（Monsieur Dubois）。传说想在他店里当学徒，你唯一的任务，就是先伺候好他那缸名叫“夏娃”的百年酵母种。</p>
@@ -147,27 +160,16 @@
           </ul>
         </section>
 
-        <section id="caffeine-mode-lyrics" class="lyrics-card" lang="en">
-          <div class="lyrics-header">Caffeine Mode &nbsp;|&nbsp; AI song by Wei Xia &nbsp;|&nbsp; March 2024</div>
-          <p class="lyrics-stanza">
-            Saturday afternoon, feeling so free<br />
-            With my friend, at Librae,<br />
-            We grab our laptops, our minds set to code<br />
-            In this cozy coffee shop, where memories are sowed
-          </p>
-          <p class="lyrics-stanza">
-            The aroma of fresh coffee fills the air<br />
-            As we dive into algorithms, without a care<br />
-            Solving problems, line by line, with concentration<br />
-            And indulging in sweet treats, a perfect combination
-          </p>
-          <p class="lyrics-stanza">
-            Oh, the sunshine streaming through the windowpanes<br />
-            Makes this study session feel like a heavenly embrace<br />
-            With caffeine-fueled minds and the warmth we embrace<br />
-            we bake a good day
-          </p>
-        </section>
+        <figure id="flavor-corners-video" class="video-card video-card-4x3">
+          <video id="post-video" controls playsinline preload="metadata" poster="../../assets/images/nyc-flavor-mv-poster.jpg?v=2">
+            <source src="../../assets/media/nyc-flavor-mv.mp4?v=2" type="video/mp4" />
+            Your browser does not support HTML5 video.
+          </video>
+          <figcaption class="video-caption">
+            <span>风味角落</span>
+            <span class="video-caption-meta" lang="en">Music Video &middot; 3:24</span>
+          </figcaption>
+        </figure>
 
         <div class="post-actions-row">
           <div class="hashtag-row" aria-label="Tags">
@@ -208,6 +210,6 @@
   <div id="lightbox-caption" class="lightbox-caption"></div>
 </div>
 
-  <script src="../../assets/js/main.js" defer></script>
+  <script src="../../assets/js/main.js?v=2" defer></script>
 </body>
 </html>

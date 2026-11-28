@@ -1,6 +1,6 @@
 # Wei Xia — Personal Website (`ericwxia.xyz`)
 
-Standalone, zero-cost static website replacing Wix for **https://www.ericwxia.xyz/**. All text, press & research links, essays, vector figures, photography, AI song (`Caffeine Mode`), and music video (`Romantic Earth`) are bundled locally under `assets/` with zero runtime dependency on Wix servers.
+Standalone, zero-cost static website replacing Wix for **https://www.ericwxia.xyz/**. All text, press & research links, essays, vector figures, photography, background audio, and music videos (`Romantic Earth`, `风味角落`) are bundled locally under `assets/` with zero runtime dependency on Wix servers.
 
 ## Directory Layout
 
@@ -12,7 +12,7 @@ ericwxia-website/
 ├── blog/categories/随笔/index.html     # Category route parity
 ├── personal/index.html                 # Personal bio & oil canvas artwork
 ├── post/romantic-earth-v-0-1/index.html# Essay 1 + HTML5 MV + SVG Figures 1–2 + Eq. 1 + Table 1 + right-margin TOC
-├── post/纽约风味角落/index.html         # Essay 2 + Caffeine Mode audio player + 15-photo NYC gallery & lightbox
+├── post/纽约风味角落/index.html         # Essay 2 + 风味角落 audio bar & full-width 4:3 MV + 15-photo NYC gallery & lightbox
 ├── post/ny-flavor-corners/index.html   # Clean ASCII alias for Essay 2
 ├── blog-feed.xml                       # RSS 2.0 feed preserving Wix blog feed URL
 ├── 404.html                            # Custom 404 page
@@ -24,7 +24,7 @@ ericwxia-website/
     ├── css/styles.css                  # Soft dimmed-graphite dark design system (#24262b)
     ├── js/main.js                      # Audio player, blog likes, search/category filter, TOC spy, lightbox
     ├── images/                         # Optimized portrait & 15 NYC gallery photos (5.0 MB total)
-    └── media/                          # romantic-earth-mv.mp4 (14.7 MB) & caffeine-mode.mp3 (2.4 MB)
+    └── media/                          # romantic-earth-mv.mp4, nyc-flavor-mv.mp4, & nyc-flavor-bgm.mp3
 ```
 
 ## Local Preview

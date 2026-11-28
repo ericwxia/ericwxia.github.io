@@ -194,14 +194,16 @@
     });
   }
 
-  // 6. Custom HTML5 Audio Player with <progress> scrubber (Caffeine Mode)
+  // 6. Custom HTML5 Audio Player with <progress> scrubber
   var audioEl = document.getElementById('post-audio');
+  var postVideoEl = document.getElementById('post-video');
   var playBtn = document.getElementById('audio-play-btn');
   var playIcon = document.getElementById('audio-icon-play');
   var pauseIcon = document.getElementById('audio-icon-pause');
   var scrubWrap = document.getElementById('audio-scrub');
   var audioProgress = document.getElementById('audio-progress');
   var timeEl = document.getElementById('audio-time');
+  var trackTitle = (audioEl && audioEl.getAttribute('data-track-title')) || 'Audio';
 
   function formatTime(sec) {
     if (!isFinite(sec) || sec < 0) {
@@ -218,7 +220,7 @@
       pauseIcon.hidden = !playing;
     }
     if (playBtn) {
-      playBtn.setAttribute('aria-label', playing ? 'Pause Caffeine Mode' : 'Play Caffeine Mode');
+      playBtn.setAttribute('aria-label', (playing ? 'Pause ' : 'Play ') + trackTitle);
     }
   }
 
@@ -231,16 +233,29 @@
       }
     });
 
-    audioEl.addEventListener('play', function () { syncPlayState(true); });
+    audioEl.addEventListener('play', function () {
+      syncPlayState(true);
+      if (postVideoEl && !postVideoEl.paused) {
+        postVideoEl.pause();
+      }
+    });
     audioEl.addEventListener('pause', function () { syncPlayState(false); });
     audioEl.addEventListener('ended', function () { syncPlayState(false); });
+
+    if (postVideoEl) {
+      postVideoEl.addEventListener('play', function () {
+        if (!audioEl.paused) {
+          audioEl.pause();
+        }
+      });
+    }
 
     audioEl.addEventListener('loadedmetadata', function () {
       timeEl.textContent = '0:00 / ' + formatTime(audioEl.duration);
     });
 
     audioEl.addEventListener('timeupdate', function () {
-      var dur = audioEl.duration || 98;
+      var dur = audioEl.duration || 204;
       var pct = Math.min(100, Math.max(0, (audioEl.currentTime / dur) * 100));
       audioProgress.value = pct;
       scrubWrap.setAttribute('aria-valuenow', String(Math.round(pct)));
@@ -253,13 +268,13 @@
         return;
       }
       var ratio = Math.min(1, Math.max(0, (e.clientX - rect.left) / rect.width));
-      var dur = audioEl.duration || 98;
+      var dur = audioEl.duration || 204;
       audioEl.currentTime = ratio * dur;
       audioProgress.value = ratio * 100;
     });
 
     scrubWrap.addEventListener('keydown', function (e) {
-      var dur = audioEl.duration || 98;
+      var dur = audioEl.duration || 204;
       if (e.key === 'ArrowRight') {
         e.preventDefault();
         audioEl.currentTime = Math.min(dur, audioEl.currentTime + 5);
