@@ -1928,6 +1928,12 @@ main {
   scroll-margin-top: 90px;
 }
 
+.chapter-section-plain {
+  border-top: none;
+  padding-top: 4px;
+  margin-top: 36px;
+}
+
 .chapter-head {
   display: flex;
   align-items: baseline;
@@ -2333,6 +2339,11 @@ main {
   .chapter-section {
     margin: 34px 0 36px;
     padding-top: 22px;
+  }
+
+  .chapter-section-plain {
+    padding-top: 4px;
+    margin-top: 28px;
   }
 
   .byline-sep-updated {
