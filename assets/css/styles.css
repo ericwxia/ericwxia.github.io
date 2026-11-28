@@ -1174,10 +1174,17 @@ main {
   color: var(--ink);
 }
 
+.toc-link-sub {
+  padding-left: 24px;
+  font-size: 0.765rem;
+  opacity: 0.86;
+}
+
 .toc-link.is-active {
   color: var(--accent);
   border-left-color: var(--accent);
   font-weight: 560;
+  opacity: 1;
 }
 
 .back-link {
@@ -1254,15 +1261,192 @@ main {
 }
 
 .disclaimer-box {
-  padding: 15px 20px;
-  margin: 24px 0 28px;
-  background: var(--bg-subtle);
-  border-left: 3px solid var(--border-strong);
+  padding: 12px 18px;
+  margin: 20px 0 26px;
+  background: rgba(239, 238, 233, 0.032);
+  border: 1px solid var(--border);
+  border-left: 2px solid var(--ink-muted);
   border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
-  font-size: 0.91rem;
-  line-height: 1.6;
-  color: var(--ink-secondary);
+  font-size: 0.855rem;
+  line-height: 1.58;
+  color: var(--ink-muted);
   font-style: italic;
+}
+
+/* Editorial Abstract Card */
+.abstract-card {
+  position: relative;
+  margin: 28px 0 38px;
+  padding: 24px 28px 26px;
+  background: linear-gradient(180deg, rgba(232, 203, 150, 0.055) 0%, rgba(45, 48, 54, 0.92) 100%);
+  border: 1px solid rgba(232, 203, 150, 0.22);
+  border-left: 3px solid var(--accent);
+  border-radius: 0 var(--radius-md) var(--radius-md) 0;
+  box-shadow: var(--shadow-sm);
+  scroll-margin-top: 90px;
+}
+
+.abstract-label {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin: 0 0 12px;
+}
+
+.abstract-card p {
+  margin: 0 !important;
+  font-family: var(--font-serif);
+  font-size: 1.06rem;
+  line-height: 1.84;
+  color: var(--ink);
+  text-align: justify;
+  text-justify: inter-word;
+}
+
+/* Authorial Semantic Color Highlights (matching original Wix essay) */
+.hl-gold {
+  color: #ffc23d !important;
+  font-weight: 650;
+}
+
+.hl-amber {
+  color: #ffe2a5 !important;
+  font-weight: 650;
+}
+
+.path-ga {
+  color: #f08a8a;
+  font-style: italic;
+}
+
+.path-md {
+  color: #eab062;
+  font-style: italic;
+}
+
+.cite-link,
+.xref-link {
+  color: var(--accent);
+  border-bottom: 1px dotted rgba(232, 203, 150, 0.42);
+  transition: color 0.15s ease, border-color 0.15s ease;
+}
+
+.cite-link {
+  font-family: var(--font-mono);
+  font-size: 0.82em;
+  border-bottom: none;
+  padding: 0 1px;
+}
+
+.cite-link:hover,
+.xref-link:hover {
+  color: var(--accent-hover);
+  border-bottom-color: var(--accent-hover);
+}
+
+/* Highlighted Prediction Cards (Section 3.1: Embodiment & Alignment) */
+.prediction-list {
+  list-style: none;
+  padding: 0 !important;
+  margin: 16px 0 24px !important;
+  display: grid;
+  gap: 14px;
+}
+
+.prediction-item {
+  margin: 0 !important;
+  padding: 16px 20px;
+  background: linear-gradient(90deg, rgba(255, 226, 165, 0.065) 0%, var(--bg-elevated) 55%);
+  border: 1px solid rgba(255, 226, 165, 0.22);
+  border-left: 3px solid #ffe2a5;
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+  font-size: 1.04rem;
+  line-height: 1.78;
+  color: var(--ink);
+  text-wrap: pretty;
+}
+
+/* Aligned Equation Variable Glossary (Section 3.3) */
+.var-glossary {
+  margin: 14px 0 24px;
+  padding: 18px 22px;
+  background: rgba(45, 48, 54, 0.58);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  display: grid;
+  grid-template-columns: 62px minmax(0, 1fr);
+  gap: 14px 16px;
+  align-items: baseline;
+}
+
+.var-glossary dt {
+  font-family: var(--font-serif);
+  font-size: 1.08rem;
+  font-weight: 600;
+  color: var(--accent);
+  text-align: right;
+  white-space: nowrap;
+}
+
+.var-glossary dd {
+  margin: 0;
+  font-size: 1.02rem;
+  line-height: 1.72;
+  color: var(--ink-secondary);
+  text-wrap: pretty;
+}
+
+.var-glossary .math-fn {
+  font-style: italic;
+}
+
+.var-glossary .math-arg {
+  font-style: normal;
+  font-weight: 450;
+  color: var(--ink-muted);
+}
+
+/* Numbered Multi-Stage Strategy Roadmap (Section 4) */
+.strategy-list {
+  list-style: none;
+  padding: 0 !important;
+  margin: 18px 0 28px !important;
+  counter-reset: strategy-step;
+  display: grid;
+  gap: 12px;
+}
+
+.strategy-list li {
+  counter-increment: strategy-step;
+  display: grid;
+  grid-template-columns: 34px minmax(0, 1fr);
+  gap: 14px;
+  align-items: baseline;
+  margin: 0 !important;
+  padding: 14px 18px;
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  font-size: 1.04rem;
+  line-height: 1.76;
+  text-wrap: pretty;
+}
+
+.strategy-list li::before {
+  content: "0" counter(strategy-step);
+  font-family: var(--font-mono);
+  font-size: 0.76rem;
+  font-weight: 600;
+  color: var(--accent);
+  background: var(--accent-soft);
+  border: 1px solid var(--accent-border);
+  border-radius: 999px;
+  padding: 2px 0;
+  text-align: center;
+  line-height: 1.5;
 }
 
 /* Video Figure */
@@ -1458,6 +1642,7 @@ main {
 
 .prose p {
   margin: 0 0 1.35em;
+  text-wrap: pretty;
 }
 
 .prose h2 {
@@ -1466,18 +1651,29 @@ main {
   line-height: 1.3;
   letter-spacing: -0.02em;
   font-weight: 630;
-  margin: 2.3em 0 0.75em;
+  margin: 2.45em 0 0.8em;
+  padding-top: 1.25em;
+  border-top: 1px solid var(--border);
   scroll-margin-top: 90px;
 }
 
 .prose h3 {
   font-family: var(--font-sans);
-  font-size: 1.14rem;
+  font-size: 1.15rem;
   line-height: 1.38;
   letter-spacing: -0.012em;
-  font-weight: 610;
-  margin: 1.8em 0 0.6em;
+  font-weight: 620;
+  margin: 2.05em 0 0.65em;
   scroll-margin-top: 90px;
+}
+
+.sec-num {
+  font-family: var(--font-mono);
+  font-size: 0.84em;
+  font-weight: 500;
+  color: var(--accent);
+  margin-right: 0.3em;
+  opacity: 0.92;
 }
 
 .prose ul,
@@ -1532,30 +1728,45 @@ main {
 
 /* Equation Block */
 .equation-box {
-  margin: 1.8em 0;
-  padding: 22px 24px;
-  background: var(--bg-elevated);
+  margin: 1.8em 0 1.3em;
+  padding: 24px 28px;
+  background: linear-gradient(180deg, rgba(232, 203, 150, 0.045) 0%, var(--bg-elevated) 100%);
   border: 1px solid var(--border);
+  border-top: 2px solid var(--accent-border);
   border-radius: var(--radius-md);
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 16px;
   overflow-x: auto;
+  scroll-margin-top: 90px;
 }
 
 .equation-math {
   font-family: var(--font-serif);
-  font-size: 1.38rem;
+  font-size: 1.44rem;
   font-style: italic;
   margin: 0 auto;
   white-space: nowrap;
   color: var(--ink);
+  letter-spacing: 0.01em;
 }
 
 .equation-math .op {
   font-style: normal;
   padding: 0 4px;
+  color: var(--ink-secondary);
+}
+
+.equation-math .arg {
+  font-style: normal;
+  color: var(--ink-secondary);
+}
+
+.equation-math sup {
+  font-size: 0.68em;
+  margin-left: 2px;
+  color: var(--accent);
 }
 
 .equation-num {
@@ -1571,10 +1782,11 @@ main {
   border: 1px solid var(--border);
   border-radius: var(--radius-md);
   background: var(--bg-elevated);
+  scroll-margin-top: 90px;
 }
 
 .table-caption {
-  padding: 12px 18px;
+  padding: 13px 18px;
   font-family: var(--font-sans);
   font-size: 0.86rem;
   font-weight: 600;
@@ -1597,14 +1809,28 @@ main {
   border-bottom: 1px solid var(--border);
 }
 
+.epoch-table tbody tr:nth-child(even) {
+  background: rgba(239, 238, 233, 0.022);
+}
+
+.epoch-table tbody tr:hover {
+  background: rgba(232, 203, 150, 0.045);
+}
+
 .epoch-table tr:last-child td {
   border-bottom: none;
 }
 
 .epoch-table th {
-  font-weight: 600;
+  font-weight: 620;
   color: var(--ink);
   background: var(--bg-elevated);
+  border-bottom: 1px solid var(--border-strong);
+}
+
+.epoch-table th:nth-child(3) {
+  color: var(--accent);
+  background: rgba(232, 203, 150, 0.055);
 }
 
 .epoch-table td:first-child {
@@ -1620,19 +1846,40 @@ main {
 .epoch-table td:nth-child(3) {
   color: var(--accent);
   font-weight: 520;
+  background: rgba(232, 203, 150, 0.032);
 }
 
 .references-list {
   font-family: var(--font-sans);
-  font-size: 0.88rem;
-  line-height: 1.62;
+  font-size: 0.89rem;
+  line-height: 1.65;
   color: var(--ink-secondary);
   list-style: none;
   padding-left: 0 !important;
+  display: grid;
+  gap: 8px;
 }
 
 .references-list li {
-  margin-bottom: 10px;
+  display: grid;
+  grid-template-columns: 34px minmax(0, 1fr);
+  gap: 8px;
+  margin: 0 !important;
+  padding: 6px 10px;
+  border-radius: var(--radius-sm);
+  scroll-margin-top: 90px;
+  transition: background-color 0.25s ease;
+}
+
+.references-list li:target {
+  background: var(--accent-soft);
+}
+
+.ref-num {
+  font-family: var(--font-mono);
+  font-size: 0.82rem;
+  color: var(--accent);
+  font-weight: 560;
 }
 
 /* Editorial Magazine Gallery Grid (NYC Post) */
@@ -1954,5 +2201,35 @@ main {
 
   .search-field {
     width: 100%;
+  }
+
+  .abstract-card {
+    padding: 18px 18px 20px;
+  }
+
+  .abstract-card p {
+    text-align: left;
+    hyphens: none;
+  }
+
+  .var-glossary {
+    grid-template-columns: 1fr;
+    gap: 4px;
+    padding: 16px 18px;
+  }
+
+  .var-glossary dt {
+    text-align: left;
+    margin-top: 8px;
+  }
+
+  .var-glossary dt:first-child {
+    margin-top: 0;
+  }
+
+  .strategy-list li {
+    grid-template-columns: 28px minmax(0, 1fr);
+    gap: 10px;
+    padding: 12px 14px;
   }
 }

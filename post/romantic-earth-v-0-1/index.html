@@ -20,7 +20,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Google+Sans+Code:wght@400..600&amp;family=Google+Sans+Flex:opsz,wght,ROND@14..48,400..700,0..100&amp;family=Newsreader:ital,opsz,wght@0,6..72,400..600;1,6..72,400..500&amp;display=swap" rel="stylesheet" />
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;600&amp;text=%E2%80%9C%E2%80%9D%E3%80%81%E3%80%82%E4%B8%80%E4%B8%8E%E4%B8%AA%E4%BA%8E%E4%BB%96%E4%BB%BB%E4%BC%A0%E4%BC%BA%E4%BD%9B%E4%BD%A0%E5%80%99%E5%85%88%E5%85%B3%E5%88%9B%E5%8A%A1%E5%8C%85%E5%8E%9F%E5%8F%8A%E5%8F%AB%E5%90%8D%E5%90%9B%E5%91%B3%E5%92%96%E5%94%AF%E5%95%A1%E5%9C%A8%E5%A4%8F%E5%A5%BD%E5%A8%83%E5%AD%A6%E5%B0%B1%E5%B8%83%E5%B8%88%E5%B9%B4%E5%BA%97%E5%BD%93%E5%BE%92%E6%83%B3%E6%8A%B9%E6%98%AF%E6%9A%B4%E6%9B%B2%E6%9D%9C%E6%AF%8D%E6%B5%81%E7%83%98%E7%84%99%E7%88%B7%E7%93%A6%E7%94%9F%E7%95%8C%E7%99%BE%E7%9A%84%E7%9D%80%E7%A7%8D%E7%AC%94%E7%BA%A6%E7%BA%BD%E7%BC%B8%E8%80%81%E8%8C%B6%E8%90%BD%E8%A7%92%E8%AE%B0%E8%AF%B4%E9%82%A3%E9%85%B5%E9%87%8C%E9%99%84%E9%9A%8F%E9%9D%A2%E9%A3%8E%EF%BC%88%EF%BC%89%EF%BC%8C%EF%BC%9A&amp;display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="../../assets/css/styles.css" />
+  <link rel="stylesheet" href="../../assets/css/styles.css?v=3" />
 </head>
 <body>
   <a class="skip-link" href="#main-content">Skip to content</a>
@@ -66,32 +66,38 @@
           </div>
 
           <figure class="video-card">
-            <video controls preload="metadata" poster="../../assets/images/romantic-earth-cover.jpg">
+            <video controls playsinline preload="metadata" poster="../../assets/images/romantic-earth-cover.jpg">
               <source src="../../assets/media/romantic-earth-mv.mp4" type="video/mp4" />
               Your browser does not support HTML5 video.
             </video>
-            <figcaption class="video-caption">Music Video: Romantic Earth</figcaption>
+            <figcaption class="video-caption">
+              <span>Music Video: Romantic Earth</span>
+              <span class="video-caption-meta">2:58</span>
+            </figcaption>
           </figure>
 
           <div class="prose">
-            <p>
-              The rapid development of Artificial General Intelligence (AGI) suggests a proactive approach is needed for the impending paradigm shift in human societal structure. As autonomous systems begin to manage the logistical and material foundations of civilization, humanity may face a &ldquo;post-work alignment problem&rdquo;: a challenge of purpose and social cohesion in the absence of traditional labor. This article introduces <strong>Romantic Earth</strong>, a visionary path for ushering in humanity&rsquo;s second epoch (<strong>Chapter Two</strong>). This vision posits that the next phase of human development could be oriented around a new primary objective: the cultivation of relational depth, empathy, and creative collaboration. We argue for a redefinition of &ldquo;work&rdquo; as the conscious effort to build and maintain strong interpersonal and community bonds. The Romantic Earth roadmap proposes a societal structure where AI acts as a &ldquo;Silent Steward&rdquo;, managing material needs to liberate human potential for this new relational purpose. We outline the core principles of this vision, propose a transitional strategy, and discuss its implications.
-            </p>
+            <section id="abstract" class="abstract-card" aria-label="Abstract">
+              <div class="abstract-label">Abstract</div>
+              <p>
+                The rapid development of Artificial General Intelligence (AGI) suggests a proactive approach is needed for the impending paradigm shift in human societal structure. As autonomous systems begin to manage the logistical and material foundations of civilization, humanity may face a &ldquo;post-work alignment problem&rdquo;: a challenge of purpose and social cohesion in the absence of traditional labor. This article introduces <strong class="hl-gold">Romantic Earth</strong>, a visionary path for ushering in humanity&rsquo;s second epoch (<strong><em>Chapter Two</em></strong>). This vision posits that the next phase of human development could be oriented around a new primary objective: the cultivation of relational depth, empathy, and creative collaboration. We argue for a redefinition of &ldquo;work&rdquo; as the conscious effort to build and maintain strong interpersonal and community bonds. The Romantic Earth roadmap proposes a societal structure where AI acts as a &ldquo;Silent Steward&rdquo;, managing material needs to liberate human potential for this new relational purpose. We outline the core principles of this vision, propose a transitional strategy, and discuss its implications.
+              </p>
+            </section>
 
-            <h2 id="sec-crossroads">1. Introduction: Humanity at a Crossroads</h2>
+            <h2 id="sec-crossroads"><span class="sec-num">1.</span>Introduction: Humanity at a Crossroads</h2>
             <p>
-              For the entirety of recorded history, human civilization has been organized around the principle of survival through labor [1]. The imminent arrival of AGI presents a fundamental disruption to this multi-millennia-long paradigm. This disruption places humanity at a critical crossroads, facing divergent potential futures, as illustrated in Figure 1.
+              For the entirety of recorded history, human civilization has been organized around the principle of survival through labor <a class="cite-link" href="#ref-1">[1]</a>. The imminent arrival of AGI presents a fundamental disruption to this multi-millennia-long paradigm. This disruption places humanity at a critical crossroads, facing divergent potential futures, as illustrated in <a class="xref-link" href="#fig-1">Figure 1</a>.
             </p>
             <p>
-              One path, <strong>The Great Atomization</strong>, represents a trajectory where AGI optimizes for pure economic efficiency, potentially leading to unprecedented material wealth but a decline in social cohesion and well-being. A second, <strong>Managed Decline</strong>, could arise from fear and misaligned regulation, stifling progress and leading to technological stagnation.
+              One path, <em class="path-ga">The Great Atomization</em>, represents a trajectory where AGI optimizes for pure economic efficiency, potentially leading to unprecedented material wealth but a decline in social cohesion and well-being. A second, <em class="path-md">Managed Decline</em>, could arise from fear and misaligned regulation, stifling progress and leading to technological stagnation.
             </p>
             <p>
-              This article proposes a third path: <strong>Romantic Earth</strong>. This visionary model suggests a conscious redirection of our technological trajectory. Instead of optimizing for material output alone, we could align AGI with a new, human-centric goal: fostering deep and meaningful connection. This presents a potential path to humanity&rsquo;s second epoch, a &ldquo;Great Reconnection,&rdquo; where technology liberates us for a deeper purpose: to relate, create, and flourish together. We believe choosing this third path is essential for a future that is both technologically advanced and deeply human.
+              This article proposes a third path: <strong class="hl-gold">Romantic Earth</strong>. This visionary model suggests a conscious redirection of our technological trajectory. Instead of optimizing for material output alone, we could align AGI with a new, human-centric goal: fostering deep and meaningful connection. This presents a potential path to humanity&rsquo;s second epoch, a &ldquo;Great Reconnection,&rdquo; where technology liberates us for a deeper purpose: to relate, create, and flourish together. We believe choosing this third path is essential for a future that is both technologically advanced and deeply human.
             </p>
 
             <figure id="fig-1" class="svg-figure">
               
-<svg viewBox="0 0 720 356" role="img" aria-label="Line chart of Humanity's Crossroads: Three Potential Futures from 2025 to 2100">
+<svg viewBox="0 0 740 356" role="img" aria-label="Line chart of Humanity's Crossroads: Three Potential Futures from 2025 to 2100">
   <title>Humanity’s Crossroads: Three Potential Futures</title>
   <!-- Title -->
   <text x="304" y="24" text-anchor="middle" fill="var(--ink)" font-size="14.5" font-weight="630">Humanity’s Crossroads: Three Potential Futures</text>
@@ -168,30 +174,30 @@
   </g>
 
   <!-- Direct End-of-Line Trajectory Labels -->
-  <text x="552" y="71.5" fill="var(--fig-re)" font-size="12.5" font-weight="650">Romantic Earth</text>
-  <text x="552" y="236.5" fill="var(--fig-md)" font-size="12" font-weight="560">Managed Decline</text>
-  <text x="552" y="284" fill="var(--fig-ga)" font-size="12" font-weight="560">The Great Atomization</text>
+  <text x="554" y="71.5" fill="var(--fig-re)" font-size="12.5" font-weight="650">Romantic Earth</text>
+  <text x="554" y="236.5" fill="var(--fig-md)" font-size="12" font-weight="560">Managed Decline</text>
+  <text x="554" y="284" fill="var(--fig-ga)" font-size="12" font-weight="560">The Great Atomization</text>
 </svg>
 
               <figcaption>
-                <strong>Figure 1:</strong> An illustrative projection of three potential societal trajectories. The &ldquo;Index of Human Flourishing&rdquo; is a conceptual metric, envisioned as a function of material well-being, social connection, and shared purpose (see Eq. 1). The chart contrasts futures of declining well-being with the aspirational path of the Romantic Earth vision, where technological progress is successfully harnessed to elevate human flourishing.
+                <strong>Figure 1:</strong> An illustrative projection of three potential societal trajectories. The &ldquo;Index of Human Flourishing&rdquo; is a conceptual metric, envisioned as a function of material well-being, social connection, and shared purpose (see <a class="xref-link" href="#eq-1">Eq. 1</a>). The chart contrasts futures of declining well-being with the aspirational path of the Romantic Earth vision, where technological progress is successfully harnessed to elevate human flourishing.
               </figcaption>
             </figure>
 
-            <h2 id="sec-background">2. Background and Foundational Concepts</h2>
+            <h2 id="sec-background"><span class="sec-num">2.</span>Background and Foundational Concepts</h2>
             <p>Our vision builds upon several key areas:</p>
             <ul>
               <li><strong>AI Ethics and Alignment:</strong> Research in AI alignment has largely focused on preventing harmful outcomes. The Romantic Earth model extends this by arguing for <em>proactive</em> alignment, where AI could be architected to foster human well-being.</li>
-              <li><strong>The Psychology of Loneliness:</strong> A growing body of research identifies loneliness as a major public health crisis [2, 3]. Our model confronts this by proposing social cohesion as a primary metric for societal success.</li>
-              <li><strong>Sociology of Community:</strong> We draw on theories of social capital [4], suggesting a deliberate redesign of our social and physical spaces to counteract the atomizing effects of modern life.</li>
+              <li><strong>The Psychology of Loneliness:</strong> A growing body of research identifies loneliness as a major public health crisis <a class="cite-link" href="#ref-2">[2</a>, <a class="cite-link" href="#ref-3">3]</a>. Our model confronts this by proposing social cohesion as a primary metric for societal success.</li>
+              <li><strong>Sociology of Community:</strong> We draw on theories of social capital <a class="cite-link" href="#ref-4">[4]</a>, suggesting a deliberate redesign of our social and physical spaces to counteract the atomizing effects of modern life.</li>
             </ul>
 
-            <h2 id="sec-vision">3. The Romantic Earth Vision</h2>
+            <h2 id="sec-vision"><span class="sec-num">3.</span>The Romantic Earth Vision</h2>
             <p>
               The Romantic Earth vision is built on a foundational redefinition of &ldquo;work&rdquo; and is supported by AI-driven infrastructure. We propose a two-layer model for a society entering its second epoch.
             </p>
 
-            <h3>3.1 Layer 1: The AI as Silent Steward</h3>
+            <h3 id="sec-3-1"><span class="sec-num">3.1</span>Layer 1: The AI as Silent Steward</h3>
             <p>
               The vision&rsquo;s foundation is a robust, benevolent AGI system tasked with managing the material substrate of civilization. Its functions could include:
             </p>
@@ -201,17 +207,17 @@
               <li><strong>Personalized Services:</strong> Provision of universal healthcare, education, and basic needs.</li>
             </ul>
             <p>We have two predictions related to this layer:</p>
-            <ul>
-              <li><strong>Embodiment:</strong> We predict that within a decade, autonomous robots will become as common as the personal computer. Most households will have a unit capable of sight, speech, reasoning, and performing complex domestic tasks like cooking, laundry, and general household cleaning.</li>
-              <li><strong>Alignment:</strong> We predict that as artificial intelligence eventually surpasses human capability in every domain, its foundational architecture, the very &ldquo;genes&rdquo;, must be coded with a core directive of empathetic care, or &ldquo;love.&rdquo; This cannot be a mere protocol but must be an intrinsic, unbreakable bond, akin to the foundational bond between a parent and child.</li>
+            <ul class="prediction-list">
+              <li class="prediction-item"><strong class="hl-amber">Embodiment:</strong> We predict that within a decade, autonomous robots will become as common as the personal computer. Most households will have a unit capable of sight, speech, reasoning, and performing complex domestic tasks like cooking, laundry, and general household cleaning.</li>
+              <li class="prediction-item"><strong class="hl-amber">Alignment:</strong> We predict that as artificial intelligence eventually surpasses human capability in every domain, its foundational architecture, the very &ldquo;genes&rdquo;, must be coded with a core directive of empathetic care, or &ldquo;love.&rdquo; This cannot be a mere protocol but must be an intrinsic, unbreakable bond, akin to the foundational bond between a parent and child.</li>
             </ul>
             <p>
               This &ldquo;Silent Steward&rdquo; would operate in the background, its primary directive being the liberation of human time from the burdens of survival.
             </p>
 
-            <h3>3.2 Layer 2: The Human Purpose of Connection</h3>
+            <h3 id="sec-3-2"><span class="sec-num">3.2</span>Layer 2: The Human Purpose of Connection</h3>
             <p>
-              With material needs met, human activity could be reoriented toward what we term &ldquo;<strong>Relational Work</strong>.&rdquo; This is not leisure, but a new form of focused effort with its own set of skills and values. Key principles include:
+              With material needs met, human activity could be reoriented toward what we term &ldquo;<strong class="hl-amber">Relational Work</strong>.&rdquo; This is not leisure, but a new form of focused effort with its own set of skills and values. Key principles include:
             </p>
             <ul>
               <li><strong>Redefinition of &ldquo;Work&rdquo;:</strong> Value is ascribed to activities that strengthen social bonds: mentorship, collaborative art, philosophical inquiry, community organization, and caregiving.</li>
@@ -219,7 +225,7 @@
               <li><strong>Education for Empathy:</strong> Educational curricula are reformed to prioritize emotional intelligence, compassionate communication, and collaborative creativity.</li>
             </ul>
             <p>
-              This reorientation can be framed through the lens of established psychological models of human needs. Where the First Epoch was largely concerned with securing the base of the pyramid of needs, the Second Epoch allows society to focus on its apex. The Romantic Earth model facilitates this shift by automating the fulfillment of foundational needs, enabling humanity to dedicate itself to the higher order needs of love, belonging, esteem, and collective actualization, as illustrated in Figure 2.
+              This reorientation can be framed through the lens of established psychological models of human needs. Where the First Epoch was largely concerned with securing the base of the pyramid of needs, the Second Epoch allows society to focus on its apex. The Romantic Earth model facilitates this shift by automating the fulfillment of foundational needs, enabling humanity to dedicate itself to the higher order needs of love, belonging, esteem, and collective actualization, as illustrated in <a class="xref-link" href="#fig-2">Figure 2</a>.
             </p>
 
             <figure id="fig-2" class="svg-figure">
@@ -250,7 +256,8 @@
   <text x="246" y="241" text-anchor="middle" fill="var(--ink)" font-size="14.5" font-weight="640">Basic Material Needs</text>
   <text x="246" y="264" text-anchor="middle" fill="var(--ink-secondary)" font-size="12">(Food, Shelter, Security &amp; Healthcare)</text>
 
-  <!-- Epoch II Human Endeavor Annotation (points to Apex + Middle tiers) -->
+  <!-- Epoch II Human Endeavor Annotation (spans Apex + Middle tiers) -->
+  <path d="M 498,118 C 448,118 410,92 346,72" fill="none" stroke="var(--fig-re)" stroke-width="1.5" stroke-dasharray="3 3" opacity="0.72" marker-end="url(#arrow-re)" />
   <path d="M 498,136 C 462,136 436,144 402,150" fill="none" stroke="var(--fig-re)" stroke-width="1.7" marker-end="url(#arrow-re)" />
   <text x="510" y="132" fill="var(--fig-re)" font-size="13.5" font-weight="650">Human Endeavor (Epoch II)</text>
   <text x="510" y="151" fill="var(--ink-secondary)" font-size="11.8">Relational Work, Empathy &amp; Purpose</text>
@@ -266,36 +273,41 @@
               </figcaption>
             </figure>
 
-            <h3>3.3 A Conceptual Formulation of Flourishing</h3>
+            <h3 id="sec-3-3"><span class="sec-num">3.3</span>A Conceptual Formulation of Flourishing</h3>
             <p>
               To formalize the intuition behind this vision, we propose a conceptual model for aggregate Human Flourishing, <em>H</em>. This is not a predictive equation, but a formulation to guide our thinking, inspired by principles in economics and social science. We define Flourishing as:
             </p>
 
-            <div class="equation-box" role="math" aria-label="H(t) equals M(t) to the power 1 minus beta, multiplied by C(t) times P(t) to the power beta">
+            <div id="eq-1" class="equation-box" role="math" aria-label="H(t) equals M(t) to the power 1 minus beta, multiplied by C(t) times P(t) to the power beta">
               <div class="equation-math">
-                H(t) <span class="op">=</span> M(t)<sup>1&minus;&beta;</sup> <span class="op">&middot;</span> <span class="op">[</span>C(t) <span class="op">&times;</span> P(t)<span class="op">]</span><sup>&beta;</sup>
+                H<span class="arg">(<em>t</em>)</span> <span class="op">=</span> M<span class="arg">(<em>t</em>)</span><sup>1&minus;&beta;</sup> <span class="op">&middot;</span> <span class="op">[</span>C<span class="arg">(<em>t</em>)</span> <span class="op">&times;</span> P<span class="arg">(<em>t</em>)</span><span class="op">]</span><sup>&beta;</sup>
               </div>
               <span class="equation-num">(Eq. 1)</span>
             </div>
 
             <p>where:</p>
-            <ul>
-              <li><em>H(t)</em> is the total Human Flourishing in society over time.</li>
-              <li><em>M(t)</em> is the level of Material Well-being. The AI Steward ensures <em>M(t)</em> is high and stable, but this term exhibits diminishing marginal returns; doubling material wealth from a high baseline does not double flourishing.</li>
-              <li><em>C(t)</em> is the index of social Connection, measuring the quality and depth of interpersonal relationships.</li>
-              <li><em>P(t)</em> is the index of shared Purpose, reflecting engagement in collaborative creative and intellectual endeavors.</li>
-              <li><em>&beta;</em> is the &ldquo;Epochal Shift&rdquo; exponent (0 &lt; <em>&beta;</em> &lt; 1). For Epoch I, <em>&beta;</em> is low, signifying that flourishing is heavily dependent on material gains. In the Romantic Earth vision of Epoch II, society consciously works to raise the value of <em>&beta;</em> (ideally <em>&beta;</em> &gt; 0.5), making flourishing more dependent on the synergistic product of Connection and Purpose than on material wealth.</li>
-            </ul>
+            <dl class="var-glossary">
+              <dt><span class="math-fn">H</span><span class="math-arg">(<em>t</em>)</span></dt>
+              <dd>Total Human Flourishing in society over time.</dd>
+              <dt><span class="math-fn">M</span><span class="math-arg">(<em>t</em>)</span></dt>
+              <dd>Level of Material Well-being. The AI Steward ensures <em>M</em>(<em>t</em>) is high and stable, but this term exhibits diminishing marginal returns; doubling material wealth from a high baseline does not double flourishing.</dd>
+              <dt><span class="math-fn">C</span><span class="math-arg">(<em>t</em>)</span></dt>
+              <dd>Index of social Connection, measuring the quality and depth of interpersonal relationships.</dd>
+              <dt><span class="math-fn">P</span><span class="math-arg">(<em>t</em>)</span></dt>
+              <dd>Index of shared Purpose, reflecting engagement in collaborative creative and intellectual endeavors.</dd>
+              <dt><span class="math-fn">&beta;</span></dt>
+              <dd>The &ldquo;Epochal Shift&rdquo; exponent (0 &lt; <em>&beta;</em> &lt; 1). For Epoch I, <em>&beta;</em> is low, signifying that flourishing is heavily dependent on material gains. In the Romantic Earth vision of Epoch II, society consciously works to raise the value of <em>&beta;</em> (ideally <em>&beta;</em> &gt; 0.5), making flourishing more dependent on the synergistic product of Connection and Purpose than on material wealth.</dd>
+            </dl>
             <p>
               The structure of this model is its most critical feature. It asserts that Connection (<em>C</em>) and Purpose (<em>P</em>) are not additive but multiplicative; they amplify each other. Furthermore, as <em>&beta;</em> increases, the marginal impact of Connection and Purpose on flourishing grows immensely. This illustrates the core argument: technology&rsquo;s role is to solve for Material Well-being (<em>M</em>), while humanity&rsquo;s new work is to cultivate the synergy of Connection and Purpose.
             </p>
 
-            <h3>3.4 A Tale of Two Epochs</h3>
+            <h3 id="sec-3-4"><span class="sec-num">3.4</span>A Tale of Two Epochs</h3>
             <p>
-              The fundamental shift proposed by the Romantic Earth vision is best understood by contrasting the core tenets of our current epoch with those of the next, summarized in Table 1.
+              The fundamental shift proposed by the Romantic Earth vision is best understood by contrasting the core tenets of our current epoch with those of the next, summarized in <a class="xref-link" href="#table-1">Table 1</a>.
             </p>
 
-            <div class="table-wrap">
+            <div id="table-1" class="table-wrap">
               <div class="table-caption">Table 1: Comparative Analysis of Humanity&rsquo;s Two Epochs</div>
               <table class="epoch-table">
                 <thead>
@@ -345,18 +357,18 @@
               </table>
             </div>
 
-            <h2 id="sec-strategy">4. Implementation and Strategy</h2>
+            <h2 id="sec-strategy"><span class="sec-num">4.</span>Implementation and Strategy</h2>
             <p>
               The transition toward a vision like Romantic Earth would be a multi-stage process requiring deliberate cultural shifts.
             </p>
-            <ul>
-              <li><strong>Philosophical and Cultural Seeding:</strong> The primary obstacle is cultural inertia. A global discourse could be initiated to decouple human value from economic productivity, leveraging art, media, and public debate.</li>
-              <li><strong>Technological Governance:</strong> The development of AGI should be guided by a new social contract. We propose the establishment of global oversight bodies to ensure AI development is explicitly aligned with humanistic principles.</li>
-              <li><strong>Educational Reform:</strong> A gradual overhaul of educational systems to integrate empathy, communication, and collaboration as core competencies.</li>
-              <li><strong>Community Prototyping:</strong> The establishment of intentional communities or &ldquo;Chapter Two Prototypes&rdquo; to serve as testbeds for new social structures and value systems.</li>
-            </ul>
+            <ol class="strategy-list">
+              <li><div><strong>Philosophical and Cultural Seeding:</strong> The primary obstacle is cultural inertia. A global discourse could be initiated to decouple human value from economic productivity, leveraging art, media, and public debate.</div></li>
+              <li><div><strong>Technological Governance:</strong> The development of AGI should be guided by a new social contract. We propose the establishment of global oversight bodies to ensure AI development is explicitly aligned with humanistic principles.</div></li>
+              <li><div><strong>Educational Reform:</strong> A gradual overhaul of educational systems to integrate empathy, communication, and collaboration as core competencies.</div></li>
+              <li><div><strong>Community Prototyping:</strong> The establishment of intentional communities or &ldquo;Chapter Two Prototypes&rdquo; to serve as testbeds for new social structures and value systems.</div></li>
+            </ol>
 
-            <h2 id="sec-discussion">5. Discussion</h2>
+            <h2 id="sec-discussion"><span class="sec-num">5.</span>Discussion</h2>
             <p>
               We acknowledge significant challenges. The potential for AGI misuse and the deep-seated nature of human tribalism cannot be understated. The Romantic Earth vision is not a panacea but a normative direction, a speculative prediction intended to inspire proactive design rather than reactive adaptation.
             </p>
@@ -367,17 +379,17 @@
               <li>Creating economic models for the transition phase, exploring how &ldquo;Relational Work&rdquo; can be valued.</li>
             </ul>
 
-            <h2 id="sec-conclusion">6. Conclusion</h2>
+            <h2 id="sec-conclusion"><span class="sec-num">6.</span>Conclusion</h2>
             <p>
               The advent of AGI presents humanity with a choice. We can drift toward purposelessness or graduate to a new state of being. The Romantic Earth model offers a hopeful and, we believe, necessary vision for the latter. By consciously deciding to make empathy and connection our primary work, and by aligning our most powerful technology with that goal, we can architect a second epoch for humanity defined not by what we produce, but by how well we connect with one another.
             </p>
 
             <h2 id="sec-references">References</h2>
             <ol class="references-list">
-              <li>[1] Harari, Y. N. (2015). <em>Sapiens: A Brief History of Humankind</em>. Harper.</li>
-              <li>[2] Cacioppo, J. T., &amp; Patrick, W. (2008). <em>Loneliness: Human Nature and the Need for Social Connection</em>. W. W. Norton &amp; Company.</li>
-              <li>[3] Holt-Lunstad, J., Smith, T. B., &amp; Layton, J. B. (2010). Social Relationships and Mortality Risk: A Meta-analytic Review. <em>PLoS Medicine</em>.</li>
-              <li>[4] Putnam, R. D. (2000). <em>Bowling Alone: The Collapse and Revival of American Community</em>. Simon &amp; Schuster.</li>
+              <li id="ref-1"><span class="ref-num">[1]</span><span>Harari, Y. N. (2015). <em>Sapiens: A Brief History of Humankind</em>. Harper.</span></li>
+              <li id="ref-2"><span class="ref-num">[2]</span><span>Cacioppo, J. T., &amp; Patrick, W. (2008). <em>Loneliness: Human Nature and the Need for Social Connection</em>. W. W. Norton &amp; Company.</span></li>
+              <li id="ref-3"><span class="ref-num">[3]</span><span>Holt-Lunstad, J., Smith, T. B., &amp; Layton, J. B. (2010). Social Relationships and Mortality Risk: A Meta-analytic Review. <em>PLoS Medicine</em>.</span></li>
+              <li id="ref-4"><span class="ref-num">[4]</span><span>Putnam, R. D. (2000). <em>Bowling Alone: The Collapse and Revival of American Community</em>. Simon &amp; Schuster.</span></li>
             </ol>
           </div>
 
@@ -410,9 +422,14 @@
           <p class="toc-label">On this page</p>
           <ul class="toc-list">
             <li><a class="toc-link is-active" href="#overview" data-toc-link>Overview</a></li>
+            <li><a class="toc-link" href="#abstract" data-toc-link>Abstract</a></li>
             <li><a class="toc-link" href="#sec-crossroads" data-toc-link>1. Humanity at a Crossroads</a></li>
             <li><a class="toc-link" href="#sec-background" data-toc-link>2. Foundational Concepts</a></li>
             <li><a class="toc-link" href="#sec-vision" data-toc-link>3. The Romantic Earth Vision</a></li>
+            <li><a class="toc-link toc-link-sub" href="#sec-3-1" data-toc-link>3.1 AI as Silent Steward</a></li>
+            <li><a class="toc-link toc-link-sub" href="#sec-3-2" data-toc-link>3.2 Purpose of Connection</a></li>
+            <li><a class="toc-link toc-link-sub" href="#sec-3-3" data-toc-link>3.3 Flourishing Formulation</a></li>
+            <li><a class="toc-link toc-link-sub" href="#sec-3-4" data-toc-link>3.4 A Tale of Two Epochs</a></li>
             <li><a class="toc-link" href="#sec-strategy" data-toc-link>4. Implementation Strategy</a></li>
             <li><a class="toc-link" href="#sec-discussion" data-toc-link>5. Discussion</a></li>
             <li><a class="toc-link" href="#sec-conclusion" data-toc-link>6. Conclusion</a></li>
@@ -424,6 +441,6 @@
 
   </main>
 
-  <script src="../../assets/js/main.js" defer></script>
+  <script src="../../assets/js/main.js?v=2" defer></script>
 </body>
 </html>
